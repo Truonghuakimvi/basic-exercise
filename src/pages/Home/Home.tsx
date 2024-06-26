@@ -46,7 +46,7 @@ const Home = () => {
                 </div>
               </div>
             </section>
-            <section className="flex gap-36 text-[#2b2b2b] w-full px-80 justify-center">
+            <section className="flex gap-8 text-[#2b2b2b] w-full px-80 justify-center">
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   332
@@ -107,7 +107,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col mx-[16.4%]">
+      <section className="flex flex-col mx-[15%]">
         <div className="flex justify-between pb-10">
           <div className="flex flex-col gap-1">
             <span className="text-[30px] font-raleway font-semibold">
@@ -124,8 +124,8 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-6">
-          <div className="flex flex-col gap-6 items-start max-w-[374px]">
+        <div className="flex gap-6 justify-center">
+          <div className="flex flex-col gap-6 items-start max-w-[390px] flex-shrink-0">
             <span className="text-2xl font-medium">About Courses</span>
             <p className="text-gray-500">
               Student Registration and Administration Nemo enim ipsam voluptatem
@@ -137,12 +137,14 @@ const Home = () => {
               but the majority have suffered alteration in some form, by
               injected humour, or randomised believable.
             </p>
-            <button className="bg-transparent hover:bg-[#818853] transition duration-[400ms] hover:text-white hover:border-[#818853] border-2 border-black px-[21px] py-[9.8px] rounded-sm">
-              VIEW ALL COURSES
-            </button>
+            <div className="flex flex-1 justify-center items-start">
+              <button className="bg-transparent hover:bg-[#818853] transition duration-[400ms] hover:text-white hover:border-[#818853] border-2 border-black px-[21px] py-[9.8px] rounded-sm">
+                VIEW ALL COURSES
+              </button>
+            </div>
           </div>
-          <div className="flex gap-6 pb-[30px]">
-            <div className="flex flex-col gap-3 whitespace-nowrap overflow-hidden">
+          <div className="flex gap-6 pb-[30px] flex-1">
+            <div className="flex flex-col gap-3 whitespace-nowrap overflow-hidden flex-1">
               <img
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-6.jpg"
                 alt=""
@@ -163,7 +165,7 @@ const Home = () => {
                 <span>4 votes, average: 3.00 out of 5, rated</span>
               </div>
             </div>
-            <div className="flex flex-col gap-3 whitespace-nowrap overflow-hidden">
+            <div className="flex flex-col gap-3 whitespace-nowrap overflow-hidden flex-1">
               <img
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-7.jpg"
                 alt=""
@@ -184,6 +186,58 @@ const Home = () => {
                 <span>4 votes, average: 3.00 out of 5, rated</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="flex gap-5 justify-center pt-[60px] pb-8 mx-[15%]">
+        <div className="flex-1">
+          <img
+            className="w-full h-auto"
+            src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/lms-banner1.jpg"
+            alt=""
+          />
+        </div>
+        <div className="flex-1">
+          <img
+            className="w-full h-auto"
+            src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/lms-banner2.jpg"
+            alt=""
+          />
+        </div>
+        <div className="flex-1">
+          <img
+            className="w-full h-auto"
+            src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/lms-banner3.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+      <section className="flex flex-col mx-[15%] pt-[60px] pb-[70px]">
+        <div className="flex flex-col justify-center items-center gap-3 pb-[40px]">
+          <span className="text-3xl font-medium">BLOG</span>
+          <div className="w-[40px] h-[4px] bg-[#818853]"></div>
+        </div>
+        <div className="flex justify-center items-center gap-2">
+          <div className="flex-1 p-[15px]">
+            <img
+              className="w-full h-full object-cover"
+              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog12.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex-1 p-[15px]">
+            <img
+              className="w-full h-full object-cover"
+              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog7.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex-1 p-[15px]">
+            <img
+              className="w-full h-full object-cover"
+              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog11.jpg"
+              alt=""
+            />
           </div>
         </div>
       </section>
