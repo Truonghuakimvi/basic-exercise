@@ -11,9 +11,9 @@ import skype from "../../assets/images/skype.svg";
 const Footer = () => {
   return (
     <footer>
-      <section className="flex flex-col bg-[#F3E9D6] justify-center items-center">
+      <section className="flex flex-col bg-[#f5e9d4] justify-center items-center">
         <div className="flex justify-center">
-          <div className="mt-[-60px] bg-[#fcf6eb] rounded-full">
+          <div className="mt-[-60px] bg-[#fdf6ea] rounded-full">
             <img className="p-2" src={logo} alt="" />
           </div>
         </div>
@@ -32,8 +32,8 @@ const Footer = () => {
             </div>
             <div className="flex flex-1 justify-center items-start">
               <button
-                className="bg-transparent text-[#818853] hover:bg-[#818853] transition duration-[400ms]
-               hover:text-white hover:border-[#818853] border-2 border-[#818853] px-[21px] py-[9.8px] rounded-sm"
+                className="bg-transparent text-[#838c48] hover:bg-[#838c48] transition duration-[400ms]
+               hover:text-white hover:border-[#838c48] border-2 border-[#838c48] px-[21px] py-[9.8px] rounded-sm"
               >
                 START LEARNING NOW
               </button>
@@ -43,17 +43,17 @@ const Footer = () => {
             <span className="text-xl">Popular Courses</span>
             <div className="flex flex-col">
               <span>Power Electronics</span>
-              <span className="text-[#818853]">Free</span>
+              <span className="text-[#838c48]">Free</span>
             </div>
-            <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+            <hr className="h-[2px] bg-[#e7cda0]"></hr>
             <div className="flex flex-col">
               <span>Introduction to Calculus</span>
-              <span className="text-[#818853]">Free</span>
+              <span className="text-[#838c48]">Free</span>
             </div>
-            <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+            <hr className="h-[2px] bg-[#e7cda0]"></hr>
             <div className="flex flex-col">
               <span>Basic Laws and Policies</span>
-              <span className="text-[#818853]">Free</span>
+              <span className="text-[#838c48]">Free</span>
             </div>
           </div>
           <div className="flex flex-col gap-3 text-base flex-1">
@@ -61,19 +61,19 @@ const Footer = () => {
             <ul className="flex flex-col gap-3 text-[#808080] text-sm">
               <li className="flex flex-col gap-3">
                 <span>&gt; All Courses</span>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <span>&gt; Summer Sessions</span>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <span>&gt; Professional Courses</span>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <span>&gt; Privacy Policy</span>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <span>&gt; Terms of Use</span>
@@ -90,21 +90,21 @@ const Footer = () => {
                     The Design Themes Inc. Mary Jane St, Sydney 2233 Australia.
                   </span>
                 </div>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <img className="h-[16px] w-[16px]" src={phoneIcon} alt="" />
                   <span>{`+11 (2) 7654 2233`}</span>
                 </div>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <img className="h-[16px] w-[16px]" src={phone2Icon} alt="" />
                   <span>{`+11 (5) 7654 2244`}</span>
                 </div>
-                <hr className="h-[2px] bg-[rgba(0,0,0,0.1)]"></hr>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
               </li>
               <li className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <section className="text-white bg-[#818853] py-[15px]">
+      <section className="text-white bg-[#838c48] py-[15px]">
         <div className="flex py-[10px] justify-between items-center container mx-auto">
           <div className="flex gap-2">
             <span>Copyright © 2020 LMS Theme All Rights Reserved</span>|

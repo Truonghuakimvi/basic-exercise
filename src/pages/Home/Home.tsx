@@ -31,7 +31,7 @@ const Home = () => {
                   type="text"
                 />
                 <button
-                  className="bg-[#818853] text-white rounded-3xl px-[20px] py-[12px]"
+                  className="bg-[#838c48] text-white rounded-3xl px-[20px] py-[12px]"
                   onClick={() => {}}
                 >
                   Search
@@ -42,7 +42,7 @@ const Home = () => {
                   We have the largest collection of courses
                 </h1>
                 <div className="flex justify-center items-center gap-2">
-                  <p className="text-xl text-[#818853] font-medium leading-none pb-1">
+                  <p className="text-xl text-[#838c48] font-medium leading-none pb-1">
                     View All Courses
                   </p>
                   <img
@@ -53,33 +53,33 @@ const Home = () => {
                 </div>
               </div>
             </section>
-            <section className="flex text-[#2b2b2b] w-full justify-center">
+            <section className="flex text-[#303030] w-full justify-center">
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   332
                 </h1>
-                <span className="h-[3px] w-[130px] bg-[#818853]"></span>
+                <span className="h-[3px] w-[130px] bg-[#838c48]"></span>
                 <h5 className="text-xl font-medium">Courses</h5>
               </div>
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   1403
                 </h1>
-                <span className="h-[3px] w-[130px] bg-[#818853]"></span>
+                <span className="h-[3px] w-[130px] bg-[#838c48]"></span>
                 <h5 className="text-xl font-medium">Members</h5>
               </div>
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   60
                 </h1>
-                <span className="h-[3px] w-[130px] bg-[#818853]"></span>
+                <span className="h-[3px] w-[130px] bg-[#838c48]"></span>
                 <h5 className="text-xl font-medium">Authors</h5>
               </div>
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   120
                 </h1>
-                <span className="h-[3px] w-[130px] bg-[#818853]"></span>
+                <span className="h-[3px] w-[130px] bg-[#838c48]"></span>
                 <h5 className="text-xl font-medium">Subjects</h5>
               </div>
             </section>
@@ -89,25 +89,25 @@ const Home = () => {
       <section className="flex py-[70px] justify-center items-center">
         <div className="flex w-full container mx-auto">
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#F5E9D4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon} alt="" />
             </div>
             <span className="text-xl">Best Stimulations</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#F5E9D4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon2} alt="" />
             </div>
             <span className="text-xl">Group Seminars</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#F5E9D4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon3} alt="" />
             </div>
             <span className="text-xl">Analysed Syllabus</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#F5E9D4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon4} alt="" />
             </div>
             <span className="text-xl">Pratical Training</span>
@@ -120,7 +120,7 @@ const Home = () => {
             <span className="text-[30px] font-raleway font-semibold">
               COURSES
             </span>
-            <div className="w-[40px] h-[4px] bg-[#818853]"></div>
+            <div className="w-[40px] h-[4px] bg-[#838c48]"></div>
           </div>
           <div className="flex gap-4">
             <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center">
@@ -145,7 +145,7 @@ const Home = () => {
               injected humour, or randomised believable.
             </p>
             <div className="flex flex-1 justify-center items-start">
-              <button className="bg-transparent hover:bg-[#818853] transition duration-[400ms] hover:text-white hover:border-[#818853] border-2 border-black px-[21px] py-[9.8px] rounded-sm">
+              <button className="bg-transparent hover:bg-[#838c48] transition duration-[400ms] hover:text-white hover:border-[#838c48] border-2 border-black px-[21px] py-[9.8px] rounded-sm">
                 VIEW ALL COURSES
               </button>
             </div>
@@ -156,7 +156,7 @@ const Home = () => {
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-6.jpg"
                 alt=""
               />
-              <span className="text-2xl text-[#e0934f] font-medium">Free</span>
+              <span className="text-2xl text-[#da853d] font-medium">Free</span>
               <span className="font-raleway text-xl font-medium">
                 Emerging Trends and Technologies
               </span>
@@ -177,7 +177,7 @@ const Home = () => {
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-7.jpg"
                 alt=""
               />
-              <span className="text-2xl text-[#e0934f] font-medium">$40</span>
+              <span className="text-2xl text-[#da853d] font-medium">$40</span>
               <span className="font-raleway text-xl font-medium">
                 Fitness Training Program
               </span>
@@ -222,7 +222,7 @@ const Home = () => {
       <section className="flex flex-col  pt-[60px] pb-[70px] container mx-auto">
         <div className="flex flex-col justify-center items-center gap-3 pb-[40px]">
           <span className="text-3xl font-medium">BLOG</span>
-          <div className="w-[40px] h-[4px] bg-[#818853]"></div>
+          <div className="w-[40px] h-[4px] bg-[#838c48]"></div>
         </div>
         <div className="flex justify-center items-center gap-2">
           <div className="flex flex-col flex-1 p-[15px] gap-6">
@@ -394,7 +394,7 @@ const Home = () => {
             <span className="text-[30px] font-raleway font-semibold">
               UPCOMING EVENTS
             </span>
-            <div className="w-[40px] h-[4px] bg-[#818853]"></div>
+            <div className="w-[40px] h-[4px] bg-[#838c48]"></div>
           </div>
           <div className="flex gap-4">
             <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center">
@@ -429,7 +429,7 @@ const Home = () => {
             backgroundImage: `url(https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog7.jpg)`,
           }}
         >
-          <div className="py-[100px] bg-[rgba(224,147,79,0.9)] flex flex-col items-center justify-center text-white">
+          <div className="py-[100px] bg-[rgba(218,133,61,0.9)] flex flex-col items-center justify-center text-white">
             <div className="text-center flex flex-col gap-10 items-center justify-center container mx-auto">
               <span className="text-3xl font-medium">GET IN TOUCH WITH US</span>
               <p className="text-sm max-w-[1000px]">
@@ -445,7 +445,7 @@ const Home = () => {
                   type="text"
                 />
                 <button
-                  className="bg-[#818853] text-white rounded-sm px-[24px] py-[18px] text-base"
+                  className="bg-[#838c48] text-white rounded-sm px-[24px] py-[18px] text-base"
                   onClick={() => {}}
                 >
                   SUBSCRIBE
