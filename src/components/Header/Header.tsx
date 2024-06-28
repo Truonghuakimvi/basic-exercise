@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header
-      className={`flex justify-center font-sans top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out fixed ${
+      className={`flex justify-center top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out fixed ${
         isHome && isScrolled && "bg-[#fdf6ea] shadow-md"
       }`}
     >
@@ -33,29 +33,80 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm font-medium text-black border-2 ${
-                    isActive
-                      ? "border-black rounded-sm py-3"
-                      : "border-transparent"
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
               >
                 HOME
               </NavLink>
             </li>
-            <li className="py-3 px-[22px] text-sm font-medium">COURSES</li>
-            <li className="py-3 px-[22px] text-sm font-medium">PAGES</li>
-            <li className="py-3 px-[22px] text-sm font-medium">BLOG</li>
-            <li className="py-3 px-[22px] text-sm font-medium">GALLERY</li>
-            <li className="py-3 px-[22px] text-sm font-medium">SHOP</li>
+            <li>
+              <NavLink
+                to="/course"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                COURSE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/pages"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                PAGES
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                BLOG
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/gallery"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                GALLERY
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/shop"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                SHOP
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm font-medium text-black border-2 ${
-                    isActive
-                      ? "border-black rounded-sm py-3"
-                      : "border-transparent"
+                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                    isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
               >
@@ -72,9 +123,9 @@ const Header = () => {
                   alt="User Icon"
                 />
               </div>
-              <span className="text-sm font-medium">Login</span>
-              <span className="text-sm font-medium">|</span>
-              <span className="text-sm font-medium">Register</span>
+              <span className="text-sm font-semibold text-black">Login</span>
+              <span className="text-sm font-semibold text-black">|</span>
+              <span className="text-sm font-semibold text-black">Register</span>
             </div>
             <div className="h-[35px] w-[35px]">
               <img
