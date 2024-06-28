@@ -11,7 +11,7 @@ import skype from "../../assets/images/skype.svg";
 const Footer = () => {
   return (
     <footer>
-      <section className="flex flex-col bg-[#f5e9d4] justify-center items-center">
+      <section className="flex flex-col bg-[#f5e9d4] justify-center items-center mt-[60px]">
         <div className="flex justify-center">
           <div className="mt-[-60px] bg-[#fdf6ea] rounded-full">
             <img className="p-2" src={logo} alt="" />

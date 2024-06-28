@@ -14,10 +14,14 @@ import htmlIcon from "../../assets/images/html-icon.svg";
 import cssIcon from "../../assets/images/css-icon.svg";
 import androidIcon from "../../assets/images/android-icon.svg";
 import paperplaneIcon from "../../assets/images/paperplane-icon.svg";
+import cart2Icon from "../../assets/images/cart2.icon.svg";
+import listIcon from "../../assets/images/list.icon.svg";
+import glassIcon from "../../assets/images/magnifying-glass.svg";
+import monitorIcon from "../../assets/images/monitor.icon.svg";
 
 const Home = () => {
   return (
-    <main className="flex flex-col">
+    <main>
       <section className="relative">
         <div className="flex flex-col h-[30%] w-full bg-gradient-to-t from-[rgba(243,234,216,0)] to-[#f9edd7] absolute top-0 left-0 z-10"></div>
         <img className="self-start w-full" src={bgImage} alt="" />
@@ -89,25 +93,25 @@ const Home = () => {
       <section className="flex py-[70px] justify-center items-center">
         <div className="flex w-full container mx-auto max-w-[1300px]">
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#f5e9d4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon} alt="" />
             </div>
             <span className="text-xl">Best Stimulations</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#f5e9d4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon2} alt="" />
             </div>
             <span className="text-xl">Group Seminars</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#f5e9d4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon3} alt="" />
             </div>
             <span className="text-xl">Analysed Syllabus</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 flex-1">
-            <div className="bg-[#F3E9D6] rounded-full h-[150px] w-[150px]">
+            <div className="bg-[#f5e9d4] rounded-full h-[150px] w-[150px]">
               <img className="p-8" src={topicIcon4} alt="" />
             </div>
             <span className="text-xl">Pratical Training</span>
@@ -156,7 +160,7 @@ const Home = () => {
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-6.jpg"
                 alt=""
               />
-              <span className="text-2xl text-[#e0934f] font-medium">Free</span>
+              <span className="text-2xl text-[#da853d] font-medium">Free</span>
               <span className="font-raleway text-xl font-medium">
                 Emerging Trends and Technologies
               </span>
@@ -177,7 +181,7 @@ const Home = () => {
                 src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-7.jpg"
                 alt=""
               />
-              <span className="text-2xl text-[#e0934f] font-medium">$40</span>
+              <span className="text-2xl text-[#da853d] font-medium">$40</span>
               <span className="font-raleway text-xl font-medium">
                 Fitness Training Program
               </span>
@@ -196,7 +200,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="flex gap-5 justify-center pt-[60px] pb-8 container mx-auto max-w-[1300px]">
+      <section className="flex gap-5 justify-center pt-[60px] pb-7 container mx-auto max-w-[1300px]">
         <div className="flex-1">
           <img
             className="w-full h-auto"
@@ -246,7 +250,7 @@ const Home = () => {
                 <div className="flex gap-3 text-[#808080] items-center">
                   <span>dtlmsele</span>|
                   <img
-                    className="h-[15px] w-auto mt-[2px]"
+                    className="h-[12px] w-auto mt-[2px]"
                     src={markIcon}
                     alt=""
                   />
@@ -278,7 +282,7 @@ const Home = () => {
                 <div className="flex gap-3 text-[#808080] items-center">
                   <span>dtlmsele</span>|
                   <img
-                    className="h-[15px] w-auto mt-[2px]"
+                    className="h-[12px] w-auto mt-[2px]"
                     src={markIcon}
                     alt=""
                   />
@@ -308,7 +312,7 @@ const Home = () => {
                 <div className="flex gap-3 text-[#808080] items-center">
                   <span>dtlmsele</span>|
                   <img
-                    className="h-[15px] w-auto mt-[2px]"
+                    className="h-[12px] w-auto mt-[2px]"
                     src={markIcon}
                     alt=""
                   />
@@ -326,7 +330,7 @@ const Home = () => {
         >
           <div className="flex items-center justify-center py-[100px] gap-10 container mx-auto max-w-[1300px] flex-wrap">
             <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#E1703F] rounded-full mb-4">
+              <div className="bg-[#F2672E] rounded-full mb-4">
                 <img
                   className="h-[32px] w-[32px] m-[30px]"
                   src={htmlIcon}
@@ -411,14 +415,16 @@ const Home = () => {
             src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/event.jpg"
             alt=""
           />
-          <div className="flex flex-col gap-5 text-sm text-[#808080]">
-            <span className="text-xl text-black leading-none">
+          <div className="flex flex-col gap-5 text-sm text-[#808080] max-w-[350px]">
+            <span className="text-xl text-black leading-none font-raleway">
               Welcoming 25th Batch
             </span>
-            <span>
-              December 12, 2024 @ 8:00 am - December 13, 2025 @ 5:00 pm
-            </span>
-            <span>Peppard Hill, United States</span>
+            <div className="flex flex-col gap-2">
+              <span>
+                December 12, 2024 @ 8:00 am - December 13, 2025 @ 5:00 pm
+              </span>
+              <span>Peppard Hill, United States</span>
+            </div>
           </div>
         </div>
       </section>
@@ -445,7 +451,7 @@ const Home = () => {
                   type="text"
                 />
                 <button
-                  className="bg-[#838C48] text-white rounded-sm px-[24px] py-[18px] text-base"
+                  className="bg-[#838C48] text-white rounded-l-none rounded-sm px-[24px] py-[18px] text-base"
                   onClick={() => {}}
                 >
                   SUBSCRIBE
@@ -455,8 +461,143 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="h-[500px]"></div>
+      <section className="container mx-auto max-w-[1300px] px-5 py-[70px] flex flex-col gap-[50px]">
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-3xl font-raleway font-semibold">
+            OUR PROCESS
+          </span>
+          <div className="w-[40px] h-[4px] bg-[#838C48]"></div>
+        </div>
+        <section>
+          <div className="flex gap-10">
+            <div className="flex-1 text-right flex flex-col gap-6 pt-20">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
+                  Step 01
+                </h1>
+                <span className="text-xl text-[#54595f] font-medium">
+                  Search for your course
+                </span>
+              </div>
+              <hr></hr>
+              <div className="flex gap-6 items-center">
+                <p className="text-[#808080] text-sm">
+                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
+                  fugit, sed quia consequuntur magni res.
+                </p>
+                <img className="w-[32px] h-[32px]" src={glassIcon} alt="" />
+              </div>
+            </div>
+            <div className="w-[10px] bg-[#f5e9d4] relative">
+              <div
+                className="flex justify-center items-center w-[25px] h-[25px] bg-[#f5e9d4] rounded-full 
+            absolute top-0 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[14px] h-[14px] bg-[#da853d] rounded-full"></div>
+              </div>
+              <div
+                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
+            absolute top-20 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
+              </div>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+          <div className="flex gap-10">
+            <div className="flex-1"></div>
+            <div className="w-[10px] bg-[#f5e9d4] relative">
+              <div
+                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
+            absolute top-0 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
+                  Step 02
+                </h1>
+                <span className="text-xl text-[#54595f] font-medium">
+                  Take a Sample Lesson
+                </span>
+              </div>
+              <hr></hr>
+              <div className="flex gap-6 items-center">
+                <img className="w-[32px] h-[32px]" src={monitorIcon} alt="" />
+                <p className="text-[#808080] text-sm">
+                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
+                  fugit, sed quia consequuntur magni res.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-10">
+            <div className="flex-1 text-right flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
+                  Step 03
+                </h1>
+                <span className="text-xl text-[#54595f] font-medium">
+                  Preview the Syllabus
+                </span>
+              </div>
+              <hr></hr>
+              <div className="flex gap-6 items-center">
+                <p className="text-[#808080] text-sm">
+                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
+                  fugit, sed quia consequuntur magni res.
+                </p>
+                <img className="w-[32px] h-[32px]" src={listIcon} alt="" />
+              </div>
+            </div>
+            <div className="w-[10px] bg-[#f5e9d4] relative">
+              <div
+                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
+            absolute top-0 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
+              </div>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+          <div className="flex gap-10">
+            <div className="flex-1"></div>
+            <div className="w-[10px] bg-[#f5e9d4] relative">
+              <div
+                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
+            absolute top-0 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
+              </div>
+              <div
+                className="flex justify-center items-center w-[25px] h-[25px] bg-[#f5e9d4] rounded-full 
+            absolute bottom-0 left-1/2 translate-x-[-50%]"
+              >
+                <div className="w-[14px] h-[14px] bg-[#da853d] rounded-full"></div>
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-6 pb-16">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
+                  Step 04
+                </h1>
+                <span className="text-xl text-[#54595f] font-medium">
+                  Purchase the Course
+                </span>
+              </div>
+              <hr></hr>
+              <div className="flex gap-6 items-center">
+                <img className="w-[32px] h-[32px]" src={cart2Icon} alt="" />
+                <p className="text-[#808080] text-sm">
+                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
+                  fugit, sed quia consequuntur magni res.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
   );

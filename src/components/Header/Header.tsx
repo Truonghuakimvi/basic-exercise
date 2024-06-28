@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/images/lms-logo.png";
 import cart from "../../assets/images/cart-icon.svg";
 import userIcon from "../../assets/images/user-icon.svg";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,25 +17,51 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = location.pathname === "/";
+
   return (
     <header
-      className={`flex justify-center font-sans fixed top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out ${
-        isScrolled ? "bg-[#fdf6ea] shadow-md" : "bg-transparent"
+      className={`flex justify-center font-sans top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out fixed ${
+        isHome && isScrolled && "bg-[#fdf6ea] shadow-md"
       }`}
     >
       <nav className="flex w-full justify-between gap-8 tracking-wide container mx-auto max-w-[1300px]">
         <img src={logo} alt="Logo" />
-        <div className="flex items-center w-[994.5px] h-[99px] justify-end">
+        <div className="flex items-center h-[99px] justify-end">
           <ul className="flex pr-[20px] items-center">
-            <li className="py-[11px] px-[22px] text-sm font-medium border-2 border-black rounded-sm">
-              <span>HOME</span>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm font-medium text-black border-2 ${
+                    isActive
+                      ? "border-black rounded-sm py-3"
+                      : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                HOME
+              </NavLink>
             </li>
-            <li className="py-2 px-[22px] text-sm font-medium">COURSES</li>
-            <li className="py-2 px-[22px] text-sm font-medium">PAGES</li>
-            <li className="py-2 px-[22px] text-sm font-medium">BLOG</li>
-            <li className="py-2 px-[22px] text-sm font-medium">GALLERY</li>
-            <li className="py-2 px-[22px] text-sm font-medium">SHOP</li>
-            <li className="py-2 px-[22px] text-sm font-medium">CONTACT</li>
+            <li className="py-3 px-[22px] text-sm font-medium">COURSES</li>
+            <li className="py-3 px-[22px] text-sm font-medium">PAGES</li>
+            <li className="py-3 px-[22px] text-sm font-medium">BLOG</li>
+            <li className="py-3 px-[22px] text-sm font-medium">GALLERY</li>
+            <li className="py-3 px-[22px] text-sm font-medium">SHOP</li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `py-3 px-[22px] text-sm font-medium text-black border-2 ${
+                    isActive
+                      ? "border-black rounded-sm py-3"
+                      : "border-transparent"
+                  } hover:text-current`
+                }
+              >
+                CONTACT
+              </NavLink>
+            </li>
           </ul>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
