@@ -17,7 +17,7 @@ const Footer = () => {
             <img className="p-2" src={logo} alt="" />
           </div>
         </div>
-        <div className="flex pt-[50px] pb-[60px] container mx-auto justify-center gap-6">
+        <div className="flex pt-[50px] pb-[60px] container mx-auto max-w-[1300px] justify-center gap-6">
           <div className="flex flex-col gap-4 items-start">
             <span className="text-xl">About Us</span>
             <div className="flex flex-col gap-4 max-w-[260px]">
@@ -82,11 +82,11 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-3 text-base flex-1">
             <span className="text-xl">Contact Us</span>
-            <ul className="flex flex-col gap-3 text-[#808080] text-sm">
+            <ul className="flex flex-col gap-3 text-[#808080] text-sm max-w-[200px]">
               <li className="flex flex-col gap-3">
                 <div className="flex gap-2 items-start">
                   <img className="h-[16px] w-[16px]" src={arrowIcon} alt="" />
-                  <span className="max-w-[180px] leading-[22px]">
+                  <span className="leading-[22px]">
                     The Design Themes Inc. Mary Jane St, Sydney 2233 Australia.
                   </span>
                 </div>
@@ -117,7 +117,7 @@ const Footer = () => {
         </div>
       </section>
       <section className="text-white bg-[#838c48] py-[15px]">
-        <div className="flex py-[10px] justify-between items-center container mx-auto">
+        <div className="flex py-[10px] justify-between items-center container mx-auto max-w-[1300px]">
           <div className="flex gap-2">
             <span>Copyright © 2020 LMS Theme All Rights Reserved</span>|
             <span>Design Themes</span>

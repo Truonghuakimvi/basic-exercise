@@ -18,11 +18,11 @@ const Header = () => {
 
   return (
     <header
-      className={`font-sans fixed top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out ${
+      className={`flex justify-center font-sans fixed top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out ${
         isScrolled ? "bg-[#fdf6ea] shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="flex justify-center gap-8 tracking-wide">
+      <nav className="flex w-full justify-between gap-8 tracking-wide container mx-auto max-w-[1300px]">
         <img src={logo} alt="Logo" />
         <div className="flex items-center w-[994.5px] h-[99px] justify-end">
           <ul className="flex pr-[20px] items-center">
