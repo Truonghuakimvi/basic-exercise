@@ -14,11 +14,11 @@ const Footer = () => {
     <footer>
       <section className="flex flex-col bg-[#f5e9d4] justify-center items-center mt-[60px]">
         <div className="flex justify-center">
-          <div className="mt-[-60px] bg-[#fdf6ea] rounded-full">
+          <div className="mt-[-55px] bg-[#fdf6ea] rounded-full">
             <img className="p-2" src={logo} alt="" />
           </div>
         </div>
-        <div className="flex pt-[50px] pb-[60px] container mx-auto max-w-[1300px] justify-center gap-6">
+        <div className="flex py-[60px] container mx-auto max-w-[1300px] justify-center gap-6">
           <div className="flex flex-col gap-4 items-start">
             <span className="text-xl font-raleway font-medium">About Us</span>
             <div className="flex flex-col gap-3 max-w-[270px]">
@@ -144,7 +144,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <section className="text-white bg-[#838c48] py-[15px]">
+      <section className="text-white bg-[#838c48] py-5">
         <div className="flex py-[10px] justify-between items-center container mx-auto max-w-[1300px]">
           <div className="flex gap-2 items-center">
             <span className="text-sm text-white">

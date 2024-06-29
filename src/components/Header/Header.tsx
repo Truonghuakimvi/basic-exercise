@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/images/lms-logo.png";
 import cart from "../../assets/images/cart-icon.svg";
 import userIcon from "../../assets/images/user-icon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +23,9 @@ const Header = () => {
   return (
     <header
       className={`flex justify-center top-0 left-0 w-full z-30 py-[20px] transition duration-300 ease-in-out fixed ${
-        isHome && isScrolled && "bg-[#fdf6ea] shadow-md"
+        isHome
+          ? isScrolled && "bg-[#fdf6ea] shadow-md"
+          : "bg-[#fdf6ea] shadow-md"
       }`}
     >
       <nav className="flex w-full justify-between gap-8 tracking-wide container mx-auto max-w-[1300px]">

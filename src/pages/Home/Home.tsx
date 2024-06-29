@@ -18,12 +18,22 @@ import cart2Icon from "../../assets/images/cart2.icon.svg";
 import listIcon from "../../assets/images/list.icon.svg";
 import glassIcon from "../../assets/images/magnifying-glass.svg";
 import monitorIcon from "../../assets/images/monitor.icon.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { ICourse, data } from "./Courses";
+import { useState } from "react";
+import { Timeline } from "./Timeline";
 
 const Home = () => {
+  const [courses, setCourses] = useState<ICourse[]>(data);
+
   return (
     <main>
       <section className="relative">
-        <div className="flex flex-col h-[25%] w-full bg-gradient-to-t from-[rgba(243,234,216,0)] to-[#f9edd7] absolute top-0 left-0 z-10"></div>
+        <div
+          className="flex flex-col h-[25%] w-full bg-gradient-to-t from-[rgba(243,234,216,0)] to-[#f9edd7] absolute top-0 
+          left-0 z-10"
+        ></div>
         <div className="self-start w-full h-[1000px] overflow-hidden">
           <img className="w-full h-full object-cover" src={bgImage} alt="" />
         </div>
@@ -134,10 +144,10 @@ const Home = () => {
             <div className="w-[40px] h-[4px] bg-[#838C48]"></div>
           </div>
           <div className="flex gap-4">
-            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center">
+            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-prev focus:outline-none">
               <img className="p-[16px]" src={lesserIcon} />
             </button>
-            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center">
+            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-next focus:outline-none">
               <img className="p-[16px]" src={greaterIcon} />
             </button>
           </div>
@@ -161,70 +171,92 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-1 justify-center items-start">
-              <button className="text-sm font-bold bg-transparent hover:bg-[#838C48] transition duration-[400ms] hover:text-white hover:border-[#838C48] border-2 border-black px-[21px] py-[9.8px] rounded-sm">
+              <button
+                className="text-sm font-bold bg-transparent hover:bg-[#838C48] transition duration-[400ms] hover:text-white 
+                hover:border-[#838C48] border-2 border-black px-[21px] py-[9.8px] rounded-sm"
+              >
                 VIEW ALL COURSES
               </button>
             </div>
           </div>
-          <div className="flex gap-6 pb-[30px] flex-1">
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="flex-1">
-                <img
-                  src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-6.jpg"
-                  alt=""
-                />
-              </div>
-              <span className="text-xl text-[#da853d] font-medium">Free</span>
-              <span className="font-raleway text-xl font-medium">
-                Emerging Trends and Technologies
-              </span>
-              <div className="flex gap-2 text-sm">
-                <span className="text-[#777777]">Engineering</span>|
-                <span className="text-[#777777]">4 Curriculum</span>
-              </div>
-              <div className="bg-black h-[2px]"></div>
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center gap-2">
-                  <img className="h-[16px] w-auto" src={clockIcon} alt="" />
-                  <span className="font-raleway font-base">1m 17d 3h</span>
-                </div>
-                <span className="text-sm text-[#808080]">
-                  <strong className="text-[#808080]">4</strong> votes, average:{" "}
-                  <strong className="text-[#808080]">3.00</strong> out of 5,
-                  rated
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 flex-1">
-              <div className="flex-1">
-                <img
-                  src="https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-7.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col flex-1 gap-4">
-                <span className="text-xl text-[#da853d] font-medium">$40</span>
-                <span className="font-raleway text-xl font-medium">
-                  Fitness Training Program
-                </span>
-                <div className="flex gap-2 text-[#777777]">
-                  <span>Health</span>|<span>7 Curriculum</span>
-                </div>
-                <div className="bg-black h-[2px]"></div>
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <img className="h-[16px] w-auto" src={clockIcon} alt="" />
-                    <span className="font-raleway">1m 5d 50h</span>
+          <Swiper
+            className="flex pb-[30px] flex-1"
+            spaceBetween={25}
+            slidesPerView={2}
+            loop={true}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            modules={[Navigation]}
+          >
+            {courses.map((course, index) => {
+              const sumOfVotes = course.votes.reduce(
+                (acc, current) => acc + current
+              );
+              const averageRating = (sumOfVotes / course.votes.length).toFixed(
+                2
+              );
+
+              return (
+                <SwiperSlide key={index + 1}>
+                  <div className="flex flex-col gap-4 flex-1">
+                    <div className="flex-1">
+                      <img className="w-full" src={course.image} alt="" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <span className="text-xl text-[#da853d] font-medium">
+                        {course.price ? "$" + course.price : "Free"}
+                      </span>
+                      <span className="font-raleway text-xl font-medium">
+                        {course.title}
+                      </span>
+                    </div>
+                    <div className="flex gap-2 text-sm">
+                      <span className="text-[#777777]">{course.category}</span>|
+                      <span className="text-[#777777]">
+                        {course.curriculumNums} Curriculum
+                      </span>
+                    </div>
+                    <div className="bg-black h-[2px]"></div>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <img
+                          className="h-[16px] w-auto"
+                          src={clockIcon}
+                          alt=""
+                        />
+                        <span className="font-raleway font-base">
+                          {course.duration.months
+                            ? course.duration.months + "m "
+                            : ""}
+                          {course.duration.days
+                            ? course.duration.days + "d "
+                            : ""}
+                          {course.duration.hours
+                            ? course.duration.hours + "h "
+                            : ""}
+                          {course.duration.minutes
+                            ? course.duration.minutes + "m "
+                            : ""}
+                        </span>
+                      </div>
+                      <span className="text-sm text-[#808080]">
+                        <strong className="text-[#808080]">
+                          {course.votes.length}
+                        </strong>{" "}
+                        votes, average:{" "}
+                        <strong className="text-[#808080]">
+                          {averageRating}
+                        </strong>{" "}
+                        out of 5 {course.isRated && ", rated"}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-sm text-[#808080]">
-                    <strong className="text-[#808080]">4</strong> votes,
-                    average: <strong className="text-[#808080]">3.00</strong>{" "}
-                    out of 5, rated
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </section>
       <section className="flex gap-5 justify-center pt-[60px] pb-7 container mx-auto max-w-[1300px]">
@@ -255,170 +287,191 @@ const Home = () => {
           <span className="text-3xl font-semibold font-raleway">BLOG</span>
           <div className="w-[40px] h-[4px] bg-[#838C48]"></div>
         </div>
-        <div className="flex justify-center items-center gap-2">
-          <div className="flex flex-col flex-1 p-[15px] gap-6">
-            <img
-              className="w-full h-full object-cover"
-              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog12.jpg"
-              alt=""
-            />
-            <div className="flex justify-start gap-4">
-              <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
-                <div className="px-2 py-[10px]">
-                  <span className="text-base font-medium">30 Thu</span>
+        <Swiper
+          className="flex justify-center items-center w-full"
+          spaceBetween={0}
+          slidesPerView={2}
+          autoplay={{ delay: 5000 }}
+          breakpoints={{
+            1280: {
+              slidesPerView: 3,
+            },
+          }}
+          modules={[Autoplay]}
+        >
+          <SwiperSlide>
+            <div className="flex flex-col p-[15px] gap-6">
+              <img
+                className="w-full h-full object-cover"
+                src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog12.jpg"
+                alt=""
+              />
+              <div className="flex justify-start gap-4">
+                <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
+                  <div className="px-2 py-[10px]">
+                    <span className="text-base font-medium">30 Thu</span>
+                  </div>
+                  <div className="bg-black h-[2px] w-full"></div>
+                  <div className="px-2 py-2">
+                    <img className="h-[25px]" src={fileIcon} alt="" />
+                  </div>
                 </div>
-                <div className="bg-black h-[2px] w-full"></div>
-                <div className="px-2 py-2">
-                  <img className="h-[25px]" src={fileIcon} alt="" />
-                </div>
-              </div>
-              <div className="flex flex-col items-start justify-start gap-3">
-                <span className="text-xl font-semibold font-raleway">
-                  Contrary to popular
-                </span>
-                <div className="flex gap-3 items-center">
-                  <span className="text-sm text-[#808080]">dtlmsele</span>|
-                  <img
-                    className="h-[12px] w-auto mt-[2px]"
-                    src={markIcon}
-                    alt=""
-                  />
-                  <span className="text-sm text-[#808080]">blog, chat</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col flex-1 p-[15px] gap-6">
-            <img
-              className="w-full h-full object-cover"
-              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog7.jpg"
-              alt=""
-            />
-            <div className="flex justify-start gap-4">
-              <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
-                <div className="px-2 py-[10px]">
-                  <span className="text-base font-medium">30 Thu</span>
-                </div>
-                <div className="bg-black h-[2px] w-full"></div>
-                <div className="px-2 py-2">
-                  <img className="h-[25px]" src={fileIcon} alt="" />
-                </div>
-              </div>
-              <div className="flex flex-col items-start justify-start gap-3">
-                <span className="text-xl font-semibold font-raleway">
-                  Omnis voluptas assumenda
-                </span>
-                <div className="flex gap-3 text-[#808080] items-center">
-                  <span className="text-sm text-[#808080]">dtlmsele</span>|
-                  <img
-                    className="h-[12px] w-auto mt-[2px]"
-                    src={markIcon}
-                    alt=""
-                  />
-                  <span className="text-sm text-[#808080]">blog, chat</span>
+                <div className="flex flex-col items-start justify-start gap-3">
+                  <span className="text-xl font-semibold font-raleway">
+                    Contrary to popular
+                  </span>
+                  <div className="flex gap-3 items-center">
+                    <span className="text-sm text-[#808080]">dtlmsele</span>|
+                    <img
+                      className="h-[12px] w-auto mt-[2px]"
+                      src={markIcon}
+                      alt=""
+                    />
+                    <span className="text-sm text-[#808080]">blog, chat</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col flex-1 p-[15px] gap-6">
-            <img
-              className="w-full h-full object-cover"
-              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog11.jpg"
-              alt=""
-            />
-            <div className="flex justify-start gap-4">
-              <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
-                <div className="px-2 py-[10px]">
-                  <span className="text-base font-medium">30 Thu</span>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col p-[15px] gap-6">
+              <img
+                className="w-full h-full object-cover"
+                src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog7.jpg"
+                alt=""
+              />
+              <div className="flex justify-start gap-4">
+                <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
+                  <div className="px-2 py-[10px]">
+                    <span className="text-base font-medium">30 Thu</span>
+                  </div>
+                  <div className="bg-black h-[2px] w-full"></div>
+                  <div className="px-2 py-2">
+                    <img className="h-[25px]" src={fileIcon} alt="" />
+                  </div>
                 </div>
-                <div className="bg-black h-[2px] w-full"></div>
-                <div className="px-2 py-2">
-                  <img className="h-[25px]" src={fileIcon} alt="" />
-                </div>
-              </div>
-              <div className="flex flex-col items-start justify-start gap-3">
-                <span className="text-xl font-semibold font-raleway">
-                  Piece of classical
-                </span>
-                <div className="flex gap-3 text-[#808080] items-center">
-                  <span className="text-sm text-[#808080]">dtlmsele</span>|
-                  <img
-                    className="h-[12px] w-auto mt-[2px]"
-                    src={markIcon}
-                    alt=""
-                  />
-                  <span className="text-sm text-[#808080]">blog, chat</span>
+                <div className="flex flex-col items-start justify-start gap-3">
+                  <span className="text-xl font-semibold font-raleway">
+                    Omnis voluptas assumenda
+                  </span>
+                  <div className="flex gap-3 text-[#808080] items-center">
+                    <span className="text-sm text-[#808080]">dtlmsele</span>|
+                    <img
+                      className="h-[12px] w-auto mt-[2px]"
+                      src={markIcon}
+                      alt=""
+                    />
+                    <span className="text-sm text-[#808080]">blog, chat</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col p-[15px] gap-6">
+              <img
+                className="w-full h-full object-cover"
+                src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/blog11.jpg"
+                alt=""
+              />
+              <div className="flex justify-start gap-4">
+                <div className="flex flex-col border-black border-2 rounded-sm items-center justify-center">
+                  <div className="px-2 py-[10px]">
+                    <span className="text-base font-medium">30 Thu</span>
+                  </div>
+                  <div className="bg-black h-[2px] w-full"></div>
+                  <div className="px-2 py-2">
+                    <img className="h-[25px]" src={fileIcon} alt="" />
+                  </div>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-3">
+                  <span className="text-xl font-semibold font-raleway">
+                    Piece of classical
+                  </span>
+                  <div className="flex gap-3 text-[#808080] items-center">
+                    <span className="text-sm text-[#808080]">dtlmsele</span>|
+                    <img
+                      className="h-[12px] w-auto mt-[2px]"
+                      src={markIcon}
+                      alt=""
+                    />
+                    <span className="text-sm text-[#808080]">blog, chat</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
       <section>
         <div
           className="bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${parallaxImage})` }}
         >
-          <div className="flex items-center justify-center py-[100px] gap-10 container mx-auto max-w-[1300px] flex-wrap">
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#F2672E] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={htmlIcon}
-                  alt=""
-                />
+          <div className="flex items-center justify-center py-[100px] container mx-auto max-w-[1300px] max-lg:flex-col max-lg:py-20 max-lg:gap-7">
+            <div className="flex flex-1 w-full">
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#F2672E] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={htmlIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">HTML</span>
               </div>
-              <span className="text-xl font-raleway">HTML</span>
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#306FB5] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={cssIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">CSS</span>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#A5BE51] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={androidIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">Android</span>
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#306FB5] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={cssIcon}
-                  alt=""
-                />
+            <div className="flex flex-1 w-full">
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#4989BB] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={paperplaneIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">Photoshop</span>
               </div>
-              <span className="text-xl font-raleway">CSS</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#A5BE51] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={androidIcon}
-                  alt=""
-                />
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#E5a329] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={paperplaneIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">JQuery</span>
               </div>
-              <span className="text-xl font-raleway">Android</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#4989BB] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={paperplaneIcon}
-                  alt=""
-                />
+              <div className="flex flex-col items-center justify-center flex-1">
+                <div className="bg-[#C0281B] rounded-full mb-4">
+                  <img
+                    className="h-[32px] w-[32px] m-[30px]"
+                    src={paperplaneIcon}
+                    alt=""
+                  />
+                </div>
+                <span className="text-xl font-raleway">Ruby</span>
               </div>
-              <span className="text-xl font-raleway">Photoshop</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#DBA645] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={paperplaneIcon}
-                  alt=""
-                />
-              </div>
-              <span className="text-xl font-raleway">JQuery</span>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8">
-              <div className="bg-[#C0281B] rounded-full mb-4">
-                <img
-                  className="h-[32px] w-[32px] m-[30px]"
-                  src={paperplaneIcon}
-                  alt=""
-                />
-              </div>
-              <span className="text-xl font-raleway">Ruby</span>
             </div>
           </div>
         </div>
@@ -496,7 +549,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto max-w-[1300px] px-5 py-[70px] flex flex-col gap-[50px]">
+      <section className="container mx-auto max-w-[1300px] px-5 py-[70px] flex flex-col gap-[50px] overflow-hidden">
         <div className="flex flex-col items-center gap-3">
           <span className="text-3xl font-raleway font-semibold">
             OUR PROCESS
@@ -504,134 +557,30 @@ const Home = () => {
           <div className="w-[40px] h-[4px] bg-[#838C48]"></div>
         </div>
         <section>
-          <div className="flex gap-10">
-            <div className="flex-1 text-right flex flex-col gap-6 pt-20">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
-                  Step 01
-                </h1>
-                <span className="text-xl text-[#54595f] font-medium">
-                  Search for your course
-                </span>
-              </div>
-              <hr></hr>
-              <div className="flex gap-6 items-center">
-                <p className="text-[#808080] text-sm">
-                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
-                  fugit, sed quia consequuntur magni res.
-                </p>
-                <img className="w-[32px] h-[32px]" src={glassIcon} alt="" />
-              </div>
-            </div>
-            <div className="w-[10px] bg-[#f5e9d4] relative">
-              <div
-                className="flex justify-center items-center w-[25px] h-[25px] bg-[#f5e9d4] rounded-full 
-            absolute top-0 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[14px] h-[14px] bg-[#da853d] rounded-full"></div>
-              </div>
-              <div
-                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
-            absolute top-20 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
-              </div>
-            </div>
-            <div className="flex-1"></div>
-          </div>
-          <div className="flex gap-10">
-            <div className="flex-1"></div>
-            <div className="w-[10px] bg-[#f5e9d4] relative">
-              <div
-                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
-            absolute top-0 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
-              </div>
-            </div>
-            <div className="flex-1 flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
-                  Step 02
-                </h1>
-                <span className="text-xl text-[#54595f] font-medium">
-                  Take a Sample Lesson
-                </span>
-              </div>
-              <hr></hr>
-              <div className="flex gap-6 items-center">
-                <img className="w-[32px] h-[32px]" src={monitorIcon} alt="" />
-                <p className="text-[#808080] text-sm">
-                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
-                  fugit, sed quia consequuntur magni res.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-10">
-            <div className="flex-1 text-right flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
-                  Step 03
-                </h1>
-                <span className="text-xl text-[#54595f] font-medium">
-                  Preview the Syllabus
-                </span>
-              </div>
-              <hr></hr>
-              <div className="flex gap-6 items-center">
-                <p className="text-[#808080] text-sm">
-                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
-                  fugit, sed quia consequuntur magni res.
-                </p>
-                <img className="w-[32px] h-[32px]" src={listIcon} alt="" />
-              </div>
-            </div>
-            <div className="w-[10px] bg-[#f5e9d4] relative">
-              <div
-                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
-            absolute top-0 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
-              </div>
-            </div>
-            <div className="flex-1"></div>
-          </div>
-          <div className="flex gap-10">
-            <div className="flex-1"></div>
-            <div className="w-[10px] bg-[#f5e9d4] relative">
-              <div
-                className="flex justify-center items-center w-[28px] h-[28px] bg-[#f5e9d4] rounded-full 
-            absolute top-0 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[16px] h-[16px] bg-[#fdf6ea] rounded-full"></div>
-              </div>
-              <div
-                className="flex justify-center items-center w-[25px] h-[25px] bg-[#f5e9d4] rounded-full 
-            absolute bottom-0 left-1/2 translate-x-[-50%]"
-              >
-                <div className="w-[14px] h-[14px] bg-[#da853d] rounded-full"></div>
-              </div>
-            </div>
-            <div className="flex-1 flex flex-col gap-6 pb-16">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-3xl font-raleway font-semibold text-[#da853d]">
-                  Step 04
-                </h1>
-                <span className="text-xl text-[#54595f] font-medium">
-                  Purchase the Course
-                </span>
-              </div>
-              <hr></hr>
-              <div className="flex gap-6 items-center">
-                <img className="w-[32px] h-[32px]" src={cart2Icon} alt="" />
-                <p className="text-[#808080] text-sm">
-                  Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut
-                  fugit, sed quia consequuntur magni res.
-                </p>
-              </div>
-            </div>
-          </div>
+          <Timeline
+            title="Step 01"
+            subtitle="Search for your course"
+            icon={glassIcon}
+            isLeft={true}
+            isTop={true}
+          />
+          <Timeline
+            title="Step 02"
+            subtitle="Take a Sample Lesson"
+            icon={monitorIcon}
+          />
+          <Timeline
+            title="Step 03"
+            subtitle="Preview the Syllabus"
+            icon={listIcon}
+            isLeft={true}
+          />
+          <Timeline
+            title="Step 04"
+            subtitle="Purchase the Course"
+            icon={cart2Icon}
+            isBot={true}
+          />
         </section>
       </section>
     </main>
