@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useState } from "react";
 
 const schema = yup.object({
   name: yup.string().required("Please fill out this field."),
@@ -8,12 +9,9 @@ const schema = yup.object({
     .string()
     .required("Please fill out this field.")
     .email("Please enter an email address.")
-    .matches(
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      "Please enter a valid email address."
-    ),
+    .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please enter an email address."),
   phone: yup.string(),
-  message: yup.string().required("Please enter an email address."),
+  message: yup.string().required("Please fill out this field."),
 });
 
 type Inputs = {
@@ -27,11 +25,23 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  const [formSuccess, setFormSuccess] = useState(false);
+
+  if (Object.keys(errors).length > 0 && formSuccess) {
+    setFormSuccess(false);
+  }
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    reset();
+    setFormSuccess(true);
+  };
 
   return (
     <main>
@@ -169,6 +179,22 @@ const Contact = () => {
                 </svg>
                 <span className="flex items-center py-[17px] justify-end text-sm text-[#d01313]">
                   One or more fields have an error. Please check and try again.
+                </span>
+              </div>
+            )}
+            {formSuccess && (
+              <div className="flex bg-[#eafac0] rounded-sm border-[#b1cf67] border items-center">
+                <svg
+                  className="h-[20px] w-auto px-4"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  fill="#7ba411"
+                >
+                  <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                </svg>
+                <span className="flex items-center py-[17px] justify-end text-sm text-[#7ba411]">
+                  Thank you for your message. It has been sent.
                 </span>
               </div>
             )}
