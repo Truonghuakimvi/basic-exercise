@@ -23,6 +23,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { ICourse, data } from "./Courses";
 import { useState } from "react";
 import { Timeline } from "./Timeline";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [courses, setCourses] = useState<ICourse[]>(data);
@@ -144,12 +145,59 @@ const Home = () => {
             <div className="w-[40px] h-[4px] bg-[#838C48]"></div>
           </div>
           <div className="flex gap-4">
-            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-prev focus:outline-none">
-              <img className="p-[16px]" src={lesserIcon} />
-            </button>
-            <button className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-next focus:outline-none">
-              <img className="p-[16px]" src={greaterIcon} />
-            </button>
+            <motion.button
+              className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-prev focus:outline-none"
+              whileHover={{
+                backgroundColor: "#838C48",
+                color: "white",
+                borderColor: "#838C48",
+                transition: { duration: 0.4 },
+              }}
+            >
+              <motion.svg
+                className="p-[17px] transition duration-[400ms]"
+                whileHover={{
+                  fill: "white",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                shape-rendering="geometricPrecision"
+                text-rendering="geometricPrecision"
+                image-rendering="optimizeQuality"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                viewBox="0 0 319 511.61"
+                fill="black"
+              >
+                <path d="m270.08 5.89 43.04 43.04c7.85 7.86 7.83 20.72 0 28.54L134.77 255.82l178.35 178.35c7.85 7.86 7.8 20.73 0 28.54l-43.04 43.04c-7.83 7.82-20.71 7.82-28.54 0L49.29 313.49l-.37-.36-43.04-43.04c-7.82-7.83-7.86-20.68 0-28.54l43.04-43.04.37-.36L241.54 5.89c7.85-7.85 20.68-7.85 28.54 0z" />
+              </motion.svg>
+            </motion.button>
+            <motion.button
+              className="flex h-[45px] w-[45px] bg-transparent border-black border-2 rounded-sm justify-center items-center swiper-button-next focus:outline-none"
+              whileHover={{
+                backgroundColor: "#838C48",
+                color: "white",
+                borderColor: "#838C48",
+                transition: { duration: 0.4 },
+              }}
+            >
+              <motion.svg
+                className="p-[17px] transition duration-[400ms]"
+                whileHover={{
+                  fill: "white",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                shape-rendering="geometricPrecision"
+                text-rendering="geometricPrecision"
+                image-rendering="optimizeQuality"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                viewBox="0 0 319 511.61"
+                fill="black"
+                transform="scale(-1,1)"
+              >
+                <path d="m270.08 5.89 43.04 43.04c7.85 7.86 7.83 20.72 0 28.54L134.77 255.82l178.35 178.35c7.85 7.86 7.8 20.73 0 28.54l-43.04 43.04c-7.83 7.82-20.71 7.82-28.54 0L49.29 313.49l-.37-.36-43.04-43.04c-7.82-7.83-7.86-20.68 0-28.54l43.04-43.04.37-.36L241.54 5.89c7.85-7.85 20.68-7.85 28.54 0z" />
+              </motion.svg>
+            </motion.button>
           </div>
         </div>
         <div className="flex gap-6 justify-center">
@@ -171,10 +219,7 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-1 justify-center items-start">
-              <button
-                className="text-sm font-bold bg-transparent hover:bg-[#838C48] transition duration-[400ms] hover:text-white 
-                hover:border-[#838C48] border-2 border-black px-[21px] py-[9.8px] rounded-sm"
-              >
+              <button className="text-sm font-bold bg-transparent border-2 border-black text-black px-[21px] py-[9.8px] rounded-sm hover:bg-[#838C48] hover:text-white hover:border-[#838C48] transition duration-[400ms]">
                 VIEW ALL COURSES
               </button>
             </div>
