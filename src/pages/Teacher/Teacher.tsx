@@ -1,5 +1,3 @@
-import facebook from "../../assets/images/facebook.svg";
-
 const Teacher = () => {
   return (
     <main>

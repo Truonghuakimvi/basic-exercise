@@ -79,4 +79,36 @@ export const data: ICourse[] = [
     votes: [4, 5, 3, 2, 5],
     isRated: false,
   },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-5.jpg",
+    price: 0,
+    title: "General Business Law",
+    category: "Law",
+    curriculumNums: 7,
+    duration: {
+      months: 1,
+      days: 25,
+      hours: 12,
+      minutes: 50,
+    },
+    votes: [4, 5, 3],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-6.jpg",
+    price: 0,
+    title: "Emerging Trends and Technologies",
+    category: "Engineering",
+    curriculumNums: 4,
+    duration: {
+      months: 1,
+      days: 16,
+      hours: 3,
+      minutes: 0,
+    },
+    votes: [4, 5, 3, 2],
+    isRated: false,
+  },
 ];

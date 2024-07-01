@@ -1,4 +1,10 @@
+import clockIcon from "../../assets/images/clock-icon.svg";
+import { ICourse, data } from "../Home/Courses";
+import { useState } from "react";
+
 const Courses_Template = () => {
+  const [courses, setCourses] = useState<ICourse[]>(data);
+
   return (
     <main>
       <section className="mb-[70px]">
@@ -15,7 +21,7 @@ const Courses_Template = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto max-w-[1300px] pb-[70px]">
+      <section className="flex gap-5 container mx-auto max-w-[1300px] pb-[70px]">
         <div className="flex flex-col gap-[15px] max-w-[275px] mb-5">
           <div className="bg-[#f5e9d4] p-[30px]">
             <div className="bg-white flex">
@@ -98,20 +104,35 @@ const Courses_Template = () => {
             </span>
             <ul className="flex flex-col gap-5">
               <li className="flex items-center gap-2">
-                <input className="h-[13px] w-[13px]" type="radio" id="radio1" />
+                <input
+                  className="h-[13px] w-[13px]"
+                  type="radio"
+                  id="radio1"
+                  name="radio"
+                />
                 <label className="text-sm font-semibold" htmlFor="radio1">
                   All
                 </label>
               </li>
               <li className="flex items-center gap-2">
-                <input className="h-[13px] w-[13px]" type="radio" id="radio1" />
-                <label className="text-sm font-semibold" htmlFor="radio1">
+                <input
+                  className="h-[13px] w-[13px]"
+                  type="radio"
+                  id="radio2"
+                  name="radio"
+                />
+                <label className="text-sm font-semibold" htmlFor="radio2">
                   Free
                 </label>
               </li>
               <li className="flex items-center gap-2 mb-4">
-                <input className="h-[13px] w-[13px]" type="radio" id="radio1" />
-                <label className="text-sm font-semibold" htmlFor="radio1">
+                <input
+                  className="h-[13px] w-[13px]"
+                  type="radio"
+                  id="radio3"
+                  name="radio"
+                />
+                <label className="text-sm font-semibold" htmlFor="radio3">
                   Paid
                 </label>
               </li>
@@ -137,6 +158,108 @@ const Courses_Template = () => {
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+        <div className="flex flex-col flex-1 gap-[30px]">
+          <div className="flex">
+            <div className="flex gap-2 flex-1 items-center">
+              <button className="bg-transparent flex gap-2 items-center border-2 border-[#303030] rounded-[5px] py-[10px] px-5">
+                <img
+                  className="h-[15px] w-[18px]"
+                  src="https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/apps-grid-icon.png"
+                />
+                <span className="text-sm font-semibold">GRID</span>
+              </button>
+              <button className="bg-transparent flex gap-2 items-center border-2 border-[#303030] rounded-[5px] py-[10px] px-5">
+                <img
+                  className="h-[15px] w-auto"
+                  src="https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/content-view-detail-list-icon.png"
+                />
+                <span className="text-sm font-semibold">LIST</span>
+              </button>
+            </div>
+            <div className="flex gap-2 flex-1 justify-end">
+              <span className="flex items-center">Order by : </span>
+              <button className="flex bg-white rounded-[3px] border border-[#e2d6c1]">
+                <span className="py-[15px] pl-[15px] pr-10 text-sm text-[#999999]">
+                  Select Order
+                </span>
+                <div className="flex h-full border-l border-[#e2d6c1] p-3">
+                  <svg
+                    className="h-full w-auto mx-1"
+                    overflow="visible"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                    fill="#e2d6c1"
+                  >
+                    <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div className="grid gap-[30px] grid-cols-3 max-xl:grid-cols-2 items-start">
+            {courses.map((course, index) => {
+              const sumOfVotes = course.votes.reduce(
+                (acc, current) => acc + current,
+                0
+              );
+              const averageRating = (sumOfVotes / course.votes.length).toFixed(
+                2
+              );
+
+              return (
+                <div key={index + 1} className="flex flex-col gap-4">
+                  <div className="flex-1">
+                    <img className="w-full" src={course.image} alt="" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="text-xl text-[#da853d] font-medium">
+                      {course.price ? "$" + course.price : "Free"}
+                    </span>
+                    <span className="font-raleway text-xl font-medium">
+                      {course.title}
+                    </span>
+                  </div>
+                  <div className="flex gap-2 text-sm">
+                    <span className="text-[#777777]">{course.category}</span>|
+                    <span className="text-[#777777]">
+                      {course.curriculumNums} Curriculum
+                    </span>
+                  </div>
+                  <div className="bg-black h-[2px]"></div>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      <img className="h-[16px] w-auto" src={clockIcon} alt="" />
+                      <span className="font-raleway font-base">
+                        {course.duration.months
+                          ? course.duration.months + "m "
+                          : ""}
+                        {course.duration.days
+                          ? course.duration.days + "d "
+                          : ""}
+                        {course.duration.hours
+                          ? course.duration.hours + "h "
+                          : ""}
+                        {course.duration.minutes
+                          ? course.duration.minutes + "m "
+                          : ""}
+                      </span>
+                    </div>
+                    <span className="text-sm text-[#808080]">
+                      <strong className="text-[#808080]">
+                        {course.votes.length}
+                      </strong>{" "}
+                      votes, average:{" "}
+                      <strong className="text-[#808080]">
+                        {averageRating}
+                      </strong>{" "}
+                      out of 5 {course.isRated && ", rated"}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
