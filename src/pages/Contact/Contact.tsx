@@ -53,8 +53,8 @@ const Contact = () => {
               Contact
             </span>
             <div className="flex gap-2 text-sm text-white">
-              <span className="text-white">Home</span>/
-              <span className="text-white">Contact</span>
+              <span className="text-white font-medium">Home</span>/
+              <span className="text-white font-medium">Contact</span>
             </div>
           </div>
         </div>
@@ -355,15 +355,13 @@ const Contact = () => {
       </section>
       <section className="py-20">
         <iframe
-          className="w-full h-[500px]"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250836.2848385387!2d106.33171539453122!3d10.7870189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fcd8e718a83%3A0xac323bbf87cc3689!2sB%C3%A1nh%20Canh%20Cua%2035K%20C%C3%B4%20Lan!5e0!3m2!1svi!2s!4v1719767487281!5m2!1svi!2s"
-          width="600"
-          height="450"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7879.54835463818!2d151.20863970282565!3d-33.86538604635096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12af005785288d%3A0x73d19c011b64aea6!2sETP%20SITE!5e0!3m2!1svi!2s!4v1719802347496!5m2!1svi!2s"
+          width="100%"
+          height="500"
           style={{ border: "0" }}
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Google Map Embed"
         ></iframe>
       </section>
     </main>

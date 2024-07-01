@@ -336,7 +336,7 @@ const Home = () => {
           className="flex justify-center items-center w-full"
           spaceBetween={0}
           slidesPerView={2}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 4000 }}
           breakpoints={{
             1280: {
               slidesPerView: 3,
