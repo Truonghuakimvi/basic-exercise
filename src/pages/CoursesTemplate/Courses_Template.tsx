@@ -21,7 +21,7 @@ const Courses_Template = () => {
           </div>
         </div>
       </section>
-      <section className="flex gap-5 container mx-auto max-w-[1300px] pb-[70px]">
+      <section className="flex gap-[30px] container mx-auto max-w-[1300px] pb-[70px]">
         <div className="flex flex-col gap-[15px] max-w-[275px] mb-5">
           <div className="bg-[#f5e9d4] p-[30px]">
             <div className="bg-white flex">
