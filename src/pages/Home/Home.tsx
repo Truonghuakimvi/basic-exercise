@@ -72,7 +72,7 @@ const Home = () => {
                 <h1 className="font-extrabold text-responsive font-raleway leading-tight">
                   332
                 </h1>
-                <span className="h-[3px] w-[130px] bg-[#838C48]"></span>
+                <span className="h-[4px] w-[130px] bg-[#838C48]"></span>
                 <h5 className="text-xl font-semibold font-raleway">Courses</h5>
               </div>
               <div className="flex flex-col items-center gap-3 p-[10px] flex-1">
