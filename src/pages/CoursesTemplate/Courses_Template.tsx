@@ -335,10 +335,13 @@ const Courses_Template = () => {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleDropdown}
-                  className="flex bg-white rounded-none border border-[#e2d6c1] h-full !outline-none"
+                  className="flex bg-white rounded-none border border-[#e2d6c1] h-full !outline-none w-[191px]"
                 >
-                  <span className="py-[15px] pl-[15px] pr-10 text-sm text-[#999999]">
-                    Select Order
+                  <span className="py-[15px] text-sm flex-1 text-left pl-[15px]">
+                    {(sortOrder == "alphabetical" && "Alphabetical") ||
+                      (sortOrder == "recent" && "Recent Courses") ||
+                      (sortOrder == "highestRated" && "Highest Rated") ||
+                      (sortOrder == "members" && "Most Members")}
                   </span>
                   <div className="h-full border-l border-[#e2d6c1] px-5">
                     <svg
