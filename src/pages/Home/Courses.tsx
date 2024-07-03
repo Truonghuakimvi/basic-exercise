@@ -111,4 +111,100 @@ export const data: ICourse[] = [
     votes: [4, 5, 3, 2],
     isRated: false,
   },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2017/11/Courses-listing-image-7.jpg",
+    price: 0,
+    title: "Advanced Machine Learning",
+    category: "Engineering",
+    curriculumNums: 6,
+    duration: {
+      months: 2,
+      days: 15,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [5, 5, 3, 2, 5],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2014/08/Courses-listing-image-8.jpg",
+    price: 0,
+    title: "Financial Accounting Basics",
+    category: "Education",
+    curriculumNums: 4,
+    duration: {
+      months: 1,
+      days: 10,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [4, 3, 3, 2, 1],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2014/08/Courses-listing-image-9.jpg",
+    price: 0,
+    title: "Healthcare Informatics",
+    category: "Health",
+    curriculumNums: 5,
+    duration: {
+      months: 1,
+      days: 18,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [4, 5, 5],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2014/06/Courses-listing-image-11.jpg",
+    price: 0,
+    title: "Corporate Law Fundamentals",
+    category: "Law",
+    curriculumNums: 6,
+    duration: {
+      months: 2,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [4, 5, 3, 2, 5, 1],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2014/06/Courses-listing-image-12.jpg",
+    price: 0,
+    title: "Statistical Methods in Psychology",
+    category: "Education",
+    curriculumNums: 5,
+    duration: {
+      months: 1,
+      days: 22,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [4, 5, 3, 2, 5, 3, 2, 1],
+    isRated: false,
+  },
+  {
+    image:
+      "https://dtlmselementor.wpengine.com/wp-content/uploads/2014/06/Courses-listing-image-10.jpg",
+    price: 0,
+    title: "Environmental Engineering Principles",
+    category: "Engineering",
+    curriculumNums: 7,
+    duration: {
+      months: 2,
+      days: 25,
+      hours: 0,
+      minutes: 0,
+    },
+    votes: [4, 5, 3, 2, 5, 1, 1],
+    isRated: false,
+  },
 ];

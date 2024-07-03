@@ -16,7 +16,7 @@ const Teacher = () => {
         </div>
       </section>
       <section className="container mx-auto max-w-[1300px] flex gap-5 justify-start items-start">
-        <div className="flex flex-col max-w-[270px] gap-5">
+        <div className="flex flex-col max-w-[270px] gap-5 shrink-0">
           <div className="flex flex-col border-4 border-[#f5e9d4] shadow-[0_0_0_1px_#e2d6c1] gap-6 justify-center items-start p-5">
             <div className="flex flex-col gap-3">
               <span className="text-xl font-raleway font-semibold">
@@ -236,10 +236,10 @@ const Teacher = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-wrap gap-5">
+        <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-2">
           <div className="flex flex-col gap-[15px] bg-[#f5e9d4] p-[10px] self-start">
             <img
-              className="max-h-[262px]"
+              className="w-full flex-1"
               src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/Teacher-image-3.jpg"
               alt=""
             />
@@ -282,7 +282,7 @@ const Teacher = () => {
           </div>
           <div className="flex flex-col gap-[15px] bg-[#f5e9d4] p-[10px] self-start">
             <img
-              className="max-h-[262px]"
+              className="w-full flex-1"
               src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/Teacher-image-2.jpg"
               alt=""
             />
@@ -325,7 +325,7 @@ const Teacher = () => {
           </div>
           <div className="flex flex-col gap-[15px] bg-[#f5e9d4] p-[10px] self-start">
             <img
-              className="max-h-[262px]"
+              className="w-full flex-1"
               src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/Teacher-image-1.jpg"
               alt=""
             />
@@ -370,7 +370,7 @@ const Teacher = () => {
           </div>
           <div className="flex flex-col gap-[15px] bg-[#f5e9d4] p-[10px] self-start">
             <img
-              className="max-h-[262px]"
+              className="w-full flex-1"
               src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/Teacher-image-4.jpg"
               alt=""
             />

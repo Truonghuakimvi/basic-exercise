@@ -1,6 +1,8 @@
 import clockIcon from "../../assets/images/clock-icon.svg";
 import { data } from "../Home/Courses";
 import { useEffect, useRef, useState } from "react";
+import { PaginationSection } from "./PaginationSection";
+import { usePaging } from "./usePaging";
 
 const Courses_Template = () => {
   const [isList, setIsList] = useState(false);
@@ -23,28 +25,11 @@ const Courses_Template = () => {
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   const [filterType, setFilterType] = useState<"all" | "free" | "paid">("all");
   const [categoryFilters, setCategoryFilters] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<
-    "alphabetical" | "recent" | "highestRated" | "members"
-  >("recent");
+    "alphabetical" | "recent" | "highestRated" | "members" | "none"
+  >("none");
 
   const toggleCategoryFilter = (category: string) => {
     if (categoryFilters.includes(category)) {
@@ -90,6 +75,32 @@ const Courses_Template = () => {
     setSortOrder(order);
     setIsOpen(false);
   };
+
+  const {
+    currentRecords,
+    goToNextPage,
+    goToPrevPage,
+    nPages,
+    goToPage,
+    currentPage,
+  } = usePaging(filteredCourses);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <main>
@@ -248,10 +259,11 @@ const Courses_Template = () => {
             </span>
             <div className="bg-white flex">
               <input
-                className="bg-transparent w-full py-[10px] pr-10 pl-[15px] outline-none"
+                className="bg-transparent w-full py-[10px] pr-10 pl-[15px] outline-none cursor-pointer"
                 placeholder="Start Date"
+                readOnly
               />
-              <button className="bg-transparent !outline-none mx-[15px]">
+              <button className="bg-transparent !outline-none px-[15px]">
                 <svg
                   className="w-[14px] h-[25px]"
                   overflow="visible"
@@ -281,11 +293,11 @@ const Courses_Template = () => {
                   }`}
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
-                  shape-rendering="geometricPrecision"
-                  text-rendering="geometricPrecision"
-                  image-rendering="optimizeQuality"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  shapeRendering="geometricPrecision"
+                  textRendering="geometricPrecision"
+                  imageRendering="optimizeQuality"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   viewBox="0 0 512 486.68"
                 >
                   <path d="M10.208 0h108.173c5.615 0 10.207 4.593 10.207 10.208v100.159c0 5.615-4.592 10.208-10.207 10.208H10.208C4.593 120.575 0 115.982 0 110.367V10.208C0 4.593 4.593 0 10.208 0zm387.687 366.105h99.621c7.967 0 14.484 6.517 14.484 14.484v91.607c0 7.967-6.517 14.484-14.484 14.484h-99.621c-7.967 0-14.484-6.517-14.484-14.484v-91.607c0-7.967 6.517-14.484 14.484-14.484zm-191.706 0h99.621c7.967 0 14.484 6.517 14.484 14.484v91.607c0 7.967-6.517 14.484-14.484 14.484h-99.621c-7.967 0-14.483-6.517-14.483-14.484v-91.607c0-7.967 6.516-14.484 14.483-14.484zm-191.705 0h99.621c7.967 0 14.483 6.517 14.483 14.484v91.607c0 7.967-6.516 14.484-14.483 14.484H14.484C6.517 486.68 0 480.163 0 472.196v-91.607c0-7.967 6.517-14.484 14.484-14.484zm379.135-183.052h108.173c5.615 0 10.208 4.593 10.208 10.207v100.16c0 5.614-4.593 10.208-10.208 10.208H393.619c-5.615 0-10.208-4.594-10.208-10.208V193.26c0-5.614 4.593-10.207 10.208-10.207zm-191.706 0h108.173c5.615 0 10.208 4.593 10.208 10.207v100.16c0 5.614-4.593 10.208-10.208 10.208H201.913c-5.614 0-10.207-4.594-10.207-10.208V193.26c0-5.614 4.593-10.207 10.207-10.207zm-191.705 0h108.173c5.615 0 10.207 4.593 10.207 10.207v100.16c0 5.614-4.592 10.208-10.207 10.208H10.208C4.593 303.628 0 299.034 0 293.42V193.26c0-5.614 4.593-10.207 10.208-10.207zM393.619 0h108.173C507.407 0 512 4.593 512 10.208v100.159c0 5.615-4.593 10.208-10.208 10.208H393.619c-5.615 0-10.208-4.593-10.208-10.208V10.208C383.411 4.593 388.004 0 393.619 0zM201.913 0h108.173c5.615 0 10.208 4.593 10.208 10.208v100.159c0 5.615-4.593 10.208-10.208 10.208H201.913c-5.614 0-10.207-4.593-10.207-10.208V10.208C191.706 4.593 196.299 0 201.913 0z" />
@@ -312,11 +324,11 @@ const Courses_Template = () => {
                   }`}
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
-                  shape-rendering="geometricPrecision"
-                  text-rendering="geometricPrecision"
-                  image-rendering="optimizeQuality"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  shapeRendering="geometricPrecision"
+                  textRendering="geometricPrecision"
+                  imageRendering="optimizeQuality"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   viewBox="0 0 512 474.051"
                 >
                   <path d="M11.216 0H88.37c6.169 0 11.216 5.047 11.216 11.216v70.947c0 6.17-5.047 11.217-11.216 11.217H11.216C5.047 93.38 0 88.333 0 82.163V11.216C0 5.047 5.047 0 11.216 0zm152.662 380.672h336.906c6.169 0 11.216 5.05 11.216 11.216v70.947c0 6.166-5.051 11.216-11.216 11.216H163.878c-6.166 0-11.217-5.046-11.217-11.216v-70.947c0-6.169 5.047-11.216 11.217-11.216zm-152.662 0H88.37c6.169 0 11.216 5.047 11.216 11.216v70.947c0 6.17-5.047 11.216-11.216 11.216H11.216C5.047 474.051 0 469.005 0 462.835v-70.947c0-6.169 5.047-11.216 11.216-11.216zm152.662-190.336h336.906c6.169 0 11.216 5.05 11.216 11.216v70.947c0 6.166-5.051 11.216-11.216 11.216H163.878c-6.166 0-11.217-5.046-11.217-11.216v-70.947c0-6.17 5.047-11.216 11.217-11.216zm-152.662 0H88.37c6.169 0 11.216 5.046 11.216 11.216v70.947c0 6.17-5.047 11.216-11.216 11.216H11.216C5.047 283.715 0 278.669 0 272.499v-70.947c0-6.17 5.047-11.216 11.216-11.216zM163.878 0h336.906C506.953 0 512 5.051 512 11.216v70.947c0 6.166-5.051 11.217-11.216 11.217H163.878c-6.166 0-11.217-5.047-11.217-11.217V11.216C152.661 5.047 157.708 0 163.878 0z" />
@@ -337,11 +349,16 @@ const Courses_Template = () => {
                   onClick={toggleDropdown}
                   className="flex bg-white rounded-none border border-[#e2d6c1] h-full !outline-none w-[191px]"
                 >
-                  <span className="py-[15px] text-sm flex-1 text-left pl-[15px]">
+                  <span
+                    className={`py-[15px] font-normal text-sm flex-1 text-left pl-[15px] ${
+                      sortOrder == "none" && "text-[#999999]"
+                    }`}
+                  >
                     {(sortOrder == "alphabetical" && "Alphabetical") ||
                       (sortOrder == "recent" && "Recent Courses") ||
                       (sortOrder == "highestRated" && "Highest Rated") ||
-                      (sortOrder == "members" && "Most Members")}
+                      (sortOrder == "members" && "Most Members") ||
+                      (sortOrder == "none" && "Select Order")}
                   </span>
                   <div className="h-full border-l border-[#e2d6c1] px-5">
                     <svg
@@ -398,99 +415,126 @@ const Courses_Template = () => {
               </div>
             </div>
           </div>
-          <div
-            className={`${
-              isList
-                ? "flex flex-col gap-[45px]"
-                : "grid gap-[30px] grid-cols-3 max-xl:grid-cols-2"
-            }`}
-          >
-            {filteredCourses.map((course, index) => {
-              const sumOfVotes = course.votes.reduce(
-                (acc, current) => acc + current,
-                0
-              );
-              const averageRating = (sumOfVotes / course.votes.length).toFixed(
-                2
-              );
+          {currentRecords.length > 0 ? (
+            <div
+              className={`${
+                isList
+                  ? "flex flex-col gap-[45px]"
+                  : "grid gap-[30px] grid-cols-3 max-xl:grid-cols-2"
+              }`}
+            >
+              {currentRecords.map((course, index) => {
+                const sumOfVotes = course.votes.reduce(
+                  (acc, current) => acc + current,
+                  0
+                );
+                const averageRating = (
+                  sumOfVotes / course.votes.length
+                ).toFixed(2);
 
-              return (
-                <div
-                  key={index + 1}
-                  className={`${
-                    isList ? "flex gap-[35px]" : "flex flex-col gap-4"
-                  }`}
-                >
-                  <div className={`flex-1 ${isList && "max-w-[340px]"}`}>
-                    <img className="w-full" src={course.image} alt="" />
-                  </div>
+                return (
                   <div
-                    className={`flex flex-col gap-5 flex-1 ${
-                      isList && "pt-5 pr-[35px]"
+                    key={index + 1}
+                    className={`${
+                      isList ? "flex gap-[35px]" : "flex flex-col gap-4"
                     }`}
                   >
-                    <div className="flex flex-col gap-2 flex-1">
-                      <span className="text-xl text-[#da853d] font-medium">
-                        {course.price ? "$" + course.price : "Free"}
-                      </span>
-                      <div className="flex-1 flex items-center">
-                        <span className="font-raleway text-xl font-medium ">
-                          {course.title}
+                    <div className={`flex-1 ${isList && "max-w-[340px]"}`}>
+                      <img className="w-full" src={course.image} alt="" />
+                    </div>
+                    <div
+                      className={`flex flex-col gap-5 flex-1 ${
+                        isList && "pt-5 pr-[35px]"
+                      }`}
+                    >
+                      <div className="flex flex-col gap-2 flex-1">
+                        <span className="text-xl text-[#da853d] font-medium">
+                          {course.price ? "$" + course.price : "Free"}
+                        </span>
+                        <div className="flex-1 flex items-center">
+                          <span className="font-raleway text-xl font-medium ">
+                            {course.title}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 text-sm">
+                        <span className="text-[#777777]">
+                          {course.category}
+                        </span>
+                        |
+                        <span className="text-[#777777]">
+                          {course.curriculumNums} Curriculum
                         </span>
                       </div>
-                    </div>
-                    <div className="flex gap-2 text-sm">
-                      <span className="text-[#777777]">{course.category}</span>|
-                      <span className="text-[#777777]">
-                        {course.curriculumNums} Curriculum
-                      </span>
-                    </div>
-                    {isList && (
-                      <p className="text-sm text-[#808080] leading-[26px] font-medium">
-                        Donec eu congue sem. Fusce ut eu est semper augue
-                        accumsan. Integer consequat ultricies arcu a feugiat. In
-                        hac habitasse platea dictumst. Donec vel efficitur
-                        mauris, et tempor ipsum
-                      </p>
-                    )}
-                    <div className="bg-black h-[2px]"></div>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <img
-                          className="h-[16px] w-auto"
-                          src={clockIcon}
-                          alt=""
-                        />
-                        <span className="font-raleway font-base">
-                          {course.duration.months
-                            ? course.duration.months + "m "
-                            : ""}
-                          {course.duration.days
-                            ? course.duration.days + "d "
-                            : ""}
-                          {course.duration.hours
-                            ? course.duration.hours + "h "
-                            : ""}
-                          {course.duration.minutes
-                            ? course.duration.minutes + "m "
-                            : ""}
+                      {isList && (
+                        <p className="text-sm text-[#808080] leading-[26px] font-medium">
+                          Donec eu congue sem. Fusce ut eu est semper augue
+                          accumsan. Integer consequat ultricies arcu a feugiat.
+                          In hac habitasse platea dictumst. Donec vel efficitur
+                          mauris, et tempor ipsum
+                        </p>
+                      )}
+                      <div className="bg-black h-[2px]"></div>
+                      <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-2">
+                          <img
+                            className="h-[16px] w-auto"
+                            src={clockIcon}
+                            alt=""
+                          />
+                          <span className="font-raleway font-base">
+                            {course.duration.months
+                              ? course.duration.months + "m "
+                              : ""}
+                            {course.duration.days
+                              ? course.duration.days + "d "
+                              : ""}
+                            {course.duration.hours
+                              ? course.duration.hours + "h "
+                              : ""}
+                            {course.duration.minutes
+                              ? course.duration.minutes + "m "
+                              : ""}
+                          </span>
+                        </div>
+                        <span className="text-sm text-[#808080]">
+                          <strong className="text-[#808080]">
+                            {course.votes.length}
+                          </strong>{" "}
+                          votes, average:{" "}
+                          <strong className="text-[#808080]">
+                            {averageRating}
+                          </strong>{" "}
+                          out of 5 {course.isRated && ", rated"}
                         </span>
                       </div>
-                      <span className="text-sm text-[#808080]">
-                        <strong className="text-[#808080]">
-                          {course.votes.length}
-                        </strong>{" "}
-                        votes, average:{" "}
-                        <strong className="text-[#808080]">
-                          {averageRating}
-                        </strong>{" "}
-                        out of 5 {course.isRated && ", rated"}
-                      </span>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          ) : (
+            <div className="flex items-center bg-[#838C48] gap-2 p-[15px] py-[18px]">
+              <svg
+                className="h-[20px]"
+                overflow="visible"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="white"
+              >
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+              </svg>
+              <span className="text-white text-sm">No records found!</span>
+            </div>
+          )}
+          <div className="flex justify-center mt-[30px]">
+            <PaginationSection
+              goToPrevPage={goToPrevPage}
+              goToNextPage={goToNextPage}
+              goToPage={goToPage}
+              currentPage={currentPage}
+              nPages={nPages}
+            />
           </div>
         </div>
       </section>

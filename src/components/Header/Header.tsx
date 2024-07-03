@@ -30,31 +30,216 @@ const Header = () => {
         <img src={logo} alt="Logo" />
         <div className="flex items-center h-[99px] justify-end">
           <ul className="flex pr-[20px] items-center">
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
-                  } hover:text-current`
+                  } hover:text-[#da853d] transition duration-300`
                 }
               >
                 HOME
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
+              transition duration-300"
+              >
+                <svg
+                  className="h-full w-[11px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <ul
+                className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Home II
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Home – Landing Page
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Home – Subscription
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Home – Course-Search
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Zoom Meeting
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Home – kids
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Points System
+                  </NavLink>
+                </li>
+              </ul>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
-                to="/course"
+                to="/courses"
                 className={({ isActive }) =>
                   `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
-                  } hover:text-current`
+                  } hover:text-[#da853d] transition duration-300`
                 }
               >
-                COURSE
+                COURSES
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
+              transition duration-300"
+              >
+                <svg
+                  className="h-full w-[11px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <ul
+                className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg 
+              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <li>
+                  <NavLink
+                    to="/courses-template"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Courses-Template
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Lessons
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Search-Course
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Membership
+                  </NavLink>
+                </li>
+                <li className="relative group/sub">
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Courses Detail
+                  </NavLink>
+                  <ul
+                    className="absolute left-full top-0 mt-0 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] 
+                  shadow-lg p-4 opacity-0 group-hover/sub:opacity-100 transition duration-300"
+                  >
+                    <li>
+                      <NavLink
+                        to="/subpage"
+                        className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                        hover:text-[#303030] font-raleway font-normal transition duration-300"
+                      >
+                        Detail Type - 1
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/subpage"
+                        className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                        hover:text-[#303030] font-raleway font-normal transition duration-300"
+                      >
+                        Detail Type - 2
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/subpage"
+                        className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                        hover:text-[#303030] font-raleway font-normal transition duration-300"
+                      >
+                        Detail Type - 3
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/subpage"
+                        className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                        hover:text-[#303030] font-raleway font-normal transition duration-300"
+                      >
+                        Detail Type - 4
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/pages"
                 className={({ isActive }) =>
@@ -65,8 +250,89 @@ const Header = () => {
               >
                 PAGES
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
+              transition duration-300"
+              >
+                <svg
+                  className="h-full w-[11px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <ul
+                className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg 
+              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <li>
+                  <NavLink
+                    to="/courses-template"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    BuddyPress
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Event
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Headers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Side-Navigation
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/teachers"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Teachers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Teachers Profile
+                  </NavLink>
+                </li>
+              </ul>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
@@ -77,6 +343,38 @@ const Header = () => {
               >
                 BLOG
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
+              transition duration-300"
+              >
+                <svg
+                  className="h-full w-[11px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <ul className="absolute left-1/2 transform -translate-x-1/2 mt-7 container mx-auto max-w-[1300px] w-screen bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <li>
+                  <NavLink
+                    to="/blog-post-1"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Blog Post 1
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/blog-post-2"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Blog Post 2
+                  </NavLink>
+                </li>
+                {/* Add more blog posts as needed */}
+              </ul>
             </li>
             <li>
               <NavLink
@@ -117,8 +415,11 @@ const Header = () => {
           </ul>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-2 group">
-                <div className="h-[40px] w-[40px] border-black border-2 rounded-[3px] p-[11px] group-hover:border-[#da853d] transition duration-[400ms]">
+              <div className="flex items-center gap-2 group cursor-pointer">
+                <div
+                  className="h-[40px] w-[40px] border-black border-2 rounded-[3px] p-[11px] 
+                group-hover:border-[#da853d] transition duration-[400ms]"
+                >
                   <svg
                     className="w-full h-full group-hover:fill-[#da853d] transition duration-[400ms]"
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,11 +433,14 @@ const Header = () => {
                 </span>
               </div>
               <span className="text-sm font-semibold text-black">|</span>
-              <span className="text-sm font-semibold text-black hover:text-[#da853d] transition duration-[400ms]">
+              <span
+                className="text-sm font-semibold text-black hover:text-[#da853d] transition duration-[400ms] 
+              cursor-pointer"
+              >
                 Register
               </span>
             </div>
-            <div className="h-[35px] w-[35px] p-[10px]">
+            <div className="h-[35px] w-[35px] p-[10px] cursor-pointer">
               <svg
                 className="w-full h-full hover:fill-[#da853d] transition duration-[400ms]"
                 xmlns="http://www.w3.org/2000/svg"

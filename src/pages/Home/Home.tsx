@@ -20,14 +20,11 @@ import glassIcon from "../../assets/images/magnifying-glass.svg";
 import monitorIcon from "../../assets/images/monitor.icon.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { ICourse, data } from "./Courses";
-import { useState } from "react";
+import { data } from "./Courses";
 import { Timeline } from "./Timeline";
 import { motion } from "framer-motion";
 
 const Home = () => {
-  const [courses, setCourses] = useState<ICourse[]>(data);
-
   return (
     <main>
       <section className="relative">
@@ -235,7 +232,7 @@ const Home = () => {
             }}
             modules={[Navigation]}
           >
-            {courses.map((course, index) => {
+            {data.map((course, index) => {
               const sumOfVotes = course.votes.reduce(
                 (acc, current) => acc + current
               );
