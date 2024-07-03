@@ -32,11 +32,15 @@ const Home = () => {
           className="flex flex-col h-[25%] w-full bg-gradient-to-t from-[rgba(243,234,216,0)] to-[#f9edd7] absolute top-0 
           left-0 z-10"
         ></div>
-        <div className="self-start w-full h-[1000px] overflow-hidden">
-          <img className="w-full h-full object-cover" src={bgImage} alt="" />
+        <div className="self-start w-full h-[1000px] max-2xl:h-[800px] overflow-hidden">
+          <img
+            className="w-full h-full object-cover"
+            src={bgImage}
+            alt="Slider Image"
+          />
         </div>
-        <div className="absolute inset-0 flex items-end justify-center z-20 pb-[200px] w-full">
-          <div className="text-center text-white flex flex-col items-center gap-20 w-full container mx-auto max-w-[1300px]">
+        <div className="absolute inset-0 flex items-end justify-center z-20 pb-[200px] max-2xl:pb-[150px] w-full">
+          <div className="text-center text-white flex flex-col items-center gap-20 max-2xl:gap-8 w-full container mx-auto max-w-[1300px]">
             <section className="flex flex-col gap-6">
               <div className="flex bg-white rounded-3xl w-[468px]">
                 <input

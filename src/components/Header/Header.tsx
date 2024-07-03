@@ -26,7 +26,7 @@ const Header = () => {
           : "bg-[#fdf6ea] shadow-md"
       }`}
     >
-      <nav className="flex w-full justify-between gap-8 tracking-wide container mx-auto max-w-[1300px]">
+      <nav className="flex w-full justify-center gap-[134px] container mx-auto max-w-[1300px]">
         <img src={logo} alt="Logo" />
         <div className="flex items-center h-[99px] justify-end">
           <ul className="flex pr-[20px] items-center">
@@ -34,7 +34,7 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-[#da853d] transition duration-300`
                 }
@@ -42,11 +42,11 @@ const Header = () => {
                 HOME
               </NavLink>
               <div
-                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
-              transition duration-300"
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
               >
                 <svg
-                  className="h-full w-[11px]"
+                  className="h-[20px] w-[20px]"
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -55,8 +55,8 @@ const Header = () => {
                 </svg>
               </div>
               <ul
-                className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 
-              opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute left-0 mt-7 w-48 2xl:w-52 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto"
               >
                 <li>
                   <NavLink
@@ -127,7 +127,7 @@ const Header = () => {
               <NavLink
                 to="/courses"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-[#da853d] transition duration-300`
                 }
@@ -135,11 +135,11 @@ const Header = () => {
                 COURSES
               </NavLink>
               <div
-                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
-              transition duration-300"
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
               >
                 <svg
-                  className="h-full w-[11px]"
+                  className="h-[20px] w-[20px]"
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -149,7 +149,7 @@ const Header = () => {
               </div>
               <ul
                 className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg 
-              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto"
               >
                 <li>
                   <NavLink
@@ -243,7 +243,7 @@ const Header = () => {
               <NavLink
                 to="/pages"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
@@ -251,11 +251,11 @@ const Header = () => {
                 PAGES
               </NavLink>
               <div
-                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
-              transition duration-300"
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
               >
                 <svg
-                  className="h-full w-[11px]"
+                  className="h-[20px] w-[20px]"
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -265,13 +265,13 @@ const Header = () => {
               </div>
               <ul
                 className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg 
-              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto"
               >
                 <li>
                   <NavLink
                     to="/courses-template"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     BuddyPress
                   </NavLink>
@@ -280,7 +280,7 @@ const Header = () => {
                   <NavLink
                     to="/subpage"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     Event
                   </NavLink>
@@ -289,7 +289,7 @@ const Header = () => {
                   <NavLink
                     to="/subpage"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     Headers
                   </NavLink>
@@ -298,7 +298,7 @@ const Header = () => {
                   <NavLink
                     to="/subpage"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     Side-Navigation
                   </NavLink>
@@ -307,7 +307,7 @@ const Header = () => {
                   <NavLink
                     to="/subpage"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     About
                   </NavLink>
@@ -316,7 +316,7 @@ const Header = () => {
                   <NavLink
                     to="/teachers"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     Teachers
                   </NavLink>
@@ -325,18 +325,19 @@ const Header = () => {
                   <NavLink
                     to="/subpage"
                     className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
-                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                hover:text-[#303030] font-raleway font-normal transition duration-300"
                   >
                     Teachers Profile
                   </NavLink>
                 </li>
               </ul>
             </li>
+
             <li className="relative group">
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
@@ -344,11 +345,11 @@ const Header = () => {
                 BLOG
               </NavLink>
               <div
-                className="absolute left-1/2 transform -translate-x-1/2 mt-1 group-hover:opacity-100 opacity-0 
-              transition duration-300"
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
               >
                 <svg
-                  className="h-full w-[11px]"
+                  className="h-[20px] w-[20px]"
                   overflow="visible"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -356,66 +357,662 @@ const Header = () => {
                   <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
                 </svg>
               </div>
-              <ul className="absolute left-1/2 transform -translate-x-1/2 mt-7 container mx-auto max-w-[1300px] w-screen bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li>
-                  <NavLink
-                    to="/blog-post-1"
-                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
-                  >
-                    Blog Post 1
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/blog-post-2"
-                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
-                  >
-                    Blog Post 2
-                  </NavLink>
-                </li>
-                {/* Add more blog posts as needed */}
-              </ul>
+              <div className="absolute left-1/2 transform -translate-x-1/2 mt-7 flex flex-col gap-5 p-[30px] pointer-events-none group-hover:pointer-events-auto container mx-auto w-[52vw] bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex gap-5">
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        I COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        II COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        III COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        THUMB IMAGE
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-[6px]">
+                    <span className="font-raleway font-semibold">
+                      FULLWIDTH IMAGE
+                    </span>
+                    <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                  </div>
+                  <div>
+                    <img
+                      src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/12/mega-menu-image-1.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/gallery"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
               >
                 GALLERY
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
+              >
+                <svg
+                  className="h-[20px] w-[20px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <div className="absolute left-1/2 transform -translate-x-[594px] mt-7 flex flex-col gap-5 p-[30px] pointer-events-none group-hover:pointer-events-auto container mx-auto w-[52vw] bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex gap-5">
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        I COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Without Filter
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        II COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Without Filter
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        III COLUMN
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Full Width
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Left Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Right Sidebar
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          With Pagination
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Without Filter
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        CONTACT US NOW
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul className="flex flex-col gap-3">
+                      <li>
+                        <input
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:text-[#303030] font-raleway font-normal transition duration-300 border outline-none
+                          focus:border-[#838C48] border-[#e2d6c1] w-full"
+                          placeholder="Your Name"
+                        ></input>
+                      </li>
+                      <li>
+                        <input
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:text-[#303030] font-raleway font-normal transition duration-300 border outline-none
+                          focus:border-[#838C48] border-[#e2d6c1] w-full"
+                          placeholder="Email"
+                        ></input>
+                      </li>
+                      <li>
+                        <textarea
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:text-[#303030] font-raleway font-normal transition duration-300 border outline-none
+                          focus:border-[#838C48] border-[#e2d6c1] w-full resize-none"
+                          placeholder="Message"
+                          rows={6}
+                        ></textarea>
+                      </li>
+                      <li className="flex justify-end">
+                        <button
+                          type="submit"
+                          className="text-sm font-bold bg-[#838C48] border-2 border-[#838C48]  text-white px-[21px] py-[9.8px] rounded-sm hover:bg-[#da853d]
+                        hover:border-[#da853d] transition duration-[400ms] mt-[12px] !outline-none"
+                        >
+                          SEND EMAIL
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/shop"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
               >
                 SHOP
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
+              >
+                <svg
+                  className="h-[20px] w-[20px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <div className="absolute left-1/2 transform -translate-x-[689px] mt-7 flex flex-col gap-5 p-[30px] pointer-events-none group-hover:pointer-events-auto container mx-auto w-[52vw] bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex gap-5">
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        POPULAR PRODUCTS
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div className="flex justify-between">
+                          <div className="flex flex-col gap-2">
+                            <span className="text-sm font-semibold font-raleway">
+                              Application Development
+                            </span>
+                            <span className="text-sm text-[#777777]">
+                              <s className="text-[12px] text-[#777777]">
+                                $15.00
+                              </s>{" "}
+                              $12.00
+                            </span>
+                          </div>
+                          <div className="p-[3px] border border-[rgba(48,48,48,0.15)] mt-[5px] ml-[8px]">
+                            <img
+                              className="h-[42px] w-[42px]"
+                              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/cover2.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <hr className="border-[rgba(48,48,48,0.15)]"></hr>
+                    <ul>
+                      <li>
+                        <div className="flex justify-between">
+                          <div className="flex flex-col gap-2">
+                            <span className="text-sm font-semibold font-raleway">
+                              Application Development
+                            </span>
+                            <span className="text-sm text-[#777777]">
+                              $35.00
+                            </span>
+                          </div>
+                          <div className="p-[3px] border border-[rgba(48,48,48,0.15)] mt-[5px] ml-[8px]">
+                            <img
+                              className="h-[42px] w-[42px]"
+                              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/note.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <hr className="border-[rgba(48,48,48,0.15)]"></hr>
+                    <ul>
+                      <li>
+                        <div className="flex justify-between">
+                          <div className="flex flex-col gap-2">
+                            <span className="text-sm font-semibold font-raleway">
+                              Application Development
+                            </span>
+                            <span className="text-sm text-[#777777]">
+                              $15.00
+                            </span>
+                          </div>
+                          <div className="p-[3px] border border-[rgba(48,48,48,0.15)] mt-[5px] ml-[8px]">
+                            <img
+                              className="h-[42px] w-[42px]"
+                              src="https://dtlmselementor.wpengine.com/wp-content/uploads/2023/11/note.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        SHOP NOW
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Shop Four Column
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Shop Three Column
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Shop Two Column
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Cart
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Checkout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-5 flex-1">
+                    <div className="flex flex-col gap-[6px]">
+                      <span className="font-raleway font-semibold">
+                        MY ACCOUNT
+                      </span>
+                      <div className="h-[2px] w-[40px] bg-[#da853d]"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          View Order
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Order Received
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-1"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Edit Account
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/blog-post-2"
+                          className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] hover:text-[#303030] font-raleway font-normal transition duration-300"
+                        >
+                          Edit My Address
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li>
+            <li className="relative group">
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `py-3 px-[22px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
+                  `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                     isActive ? "border-black" : "border-transparent"
                   } hover:text-current`
                 }
               >
                 CONTACT
               </NavLink>
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 pb-2 mt-[3px] group-hover:opacity-100 opacity-0 
+              transition duration-300 w-full flex justify-center"
+              >
+                <svg
+                  className="h-[20px] w-[20px]"
+                  overflow="visible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path>
+                </svg>
+              </div>
+              <ul
+                className="absolute left-0 mt-7 w-48 bg-[#fdf6ea] border-t-[3px] border-[#e2d6c1] shadow-lg p-4 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto"
+              >
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Contact - layout - 2
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/subpage"
+                    className="block px-4 py-3 rounded-[3px] text-sm text-[#303030] hover:bg-[#F3E9D6] 
+                    hover:text-[#303030] font-raleway font-normal transition duration-300"
+                  >
+                    Contact - layout - 3
+                  </NavLink>
+                </li>
+              </ul>
             </li>
           </ul>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-2 group cursor-pointer">
+            <div className="flex items-center gap-[10px]">
+              <div className="flex items-center gap-[10px] group cursor-pointer">
                 <div
                   className="h-[40px] w-[40px] border-black border-2 rounded-[3px] p-[11px] 
                 group-hover:border-[#da853d] transition duration-[400ms]"
