@@ -18,10 +18,10 @@ const Footer = () => {
             <img className="p-2" src={logo} alt="" />
           </div>
         </div>
-        <div className="flex py-[60px] container mx-auto max-w-[1300px] justify-center gap-6">
-          <div className="flex flex-col gap-4 items-start">
+        <div className="flex py-[60px] container mx-auto max-w-[1300px] justify-center gap-6 max-lg:px-5 max-lg:flex-col">
+          <div className="flex flex-col gap-4 items-start max-lg:items-center">
             <span className="text-xl font-raleway font-medium">About Us</span>
-            <div className="flex flex-col gap-3 max-w-[270px]">
+            <div className="flex flex-col gap-3 max-w-[270px] max-lg:max-w-full max-lg:text-center">
               <p className="text-[#808080] text-sm leading-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
                 lobortis diam.
@@ -40,111 +40,120 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-col gap-4 text-base flex-1">
-            <span className="text-xl font-raleway font-medium">
-              Popular Courses
-            </span>
-            <div className="flex flex-col gap-2">
-              <div className="flex flex-col">
-                <span className="font-raleway font-medium text-black">
-                  Power Electronics
-                </span>
-                <span className="text-[#838c48] font-medium">Free</span>
-              </div>
-              <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              <div className="flex flex-col">
-                <span className="font-raleway font-medium text-black">
-                  Introduction to Calculus
-                </span>
-                <span className="text-[#838c48] font-medium">Free</span>
-              </div>
-              <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              <div className="flex flex-col">
-                <span className="font-raleway font-medium text-black">
-                  Basic Laws and Policies
-                </span>
-                <span className="text-[#838c48] font-medium">Free</span>
+          <div className="flex gap-6 flex-1">
+            <div className="flex flex-col gap-4 text-base flex-1">
+              <span className="text-xl font-raleway font-medium">
+                Popular Courses
+              </span>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
+                  <span className="font-raleway font-medium text-black">
+                    Power Electronics
+                  </span>
+                  <span className="text-[#838c48] font-medium">Free</span>
+                </div>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                <div className="flex flex-col">
+                  <span className="font-raleway font-medium text-black">
+                    Introduction to Calculus
+                  </span>
+                  <span className="text-[#838c48] font-medium">Free</span>
+                </div>
+                <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                <div className="flex flex-col">
+                  <span className="font-raleway font-medium text-black">
+                    Basic Laws and Policies
+                  </span>
+                  <span className="text-[#838c48] font-medium">Free</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col gap-4 text-base flex-1">
-            <span className="text-xl font-raleway font-medium">
-              Quick Links
-            </span>
-            <ul className="flex flex-col gap-3 text-sm">
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
-                  <span className="text-[#808080]">All Courses</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
-                  <span className="text-[#808080]">Summer Sessions</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
-                  <span className="text-[#808080]">Professional Courses</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
-                  <span className="text-[#808080]">Privacy Policy</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
-                  <span className="text-[#808080]">Terms of Use</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col gap-4 text-base flex-1">
-            <span className="text-xl font-raleway font-medium">Contact Us</span>
-            <ul className="flex flex-col gap-3 text-sm max-w-[200px]">
-              <li className="flex flex-col gap-3">
-                <div className="flex gap-2 items-start">
-                  <img className="h-[16px] w-[16px]" src={arrowIcon} alt="" />
-                  <span className="leading-[22px] text-[#808080]">
-                    The Design Themes Inc. Mary Jane St, Sydney 2233 Australia.
-                  </span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[16px] w-[16px]" src={phoneIcon} alt="" />
-                  <span className="text-[#808080]">{`+11 (2) 7654 2233`}</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[16px] w-[16px]" src={phone2Icon} alt="" />
-                  <span className="text-[#808080]">{`+11 (5) 7654 2244`}</span>
-                </div>
-                <hr className="h-[2px] bg-[#e7cda0]"></hr>
-              </li>
-              <li className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <img className="h-[16px] w-[16px]" src={mailIcon} alt="" />
-                  <span className="text-[#808080]">lms@gmail.com</span>
-                </div>
-              </li>
-            </ul>
+            <div className="flex flex-col gap-4 text-base flex-1">
+              <span className="text-xl font-raleway font-medium">
+                Quick Links
+              </span>
+              <ul className="flex flex-col gap-3 text-sm">
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
+                    <span className="text-[#808080]">All Courses</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
+                    <span className="text-[#808080]">Summer Sessions</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
+                    <span className="text-[#808080]">Professional Courses</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
+                    <span className="text-[#808080]">Privacy Policy</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[8px] w-auto" src={arrowIcon2} alt="" />
+                    <span className="text-[#808080]">Terms of Use</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4 text-base flex-1">
+              <span className="text-xl font-raleway font-medium">
+                Contact Us
+              </span>
+              <ul className="flex flex-col gap-3 text-sm max-w-[200px]">
+                <li className="flex flex-col gap-3">
+                  <div className="flex gap-2 items-start">
+                    <img className="h-[16px] w-[16px]" src={arrowIcon} alt="" />
+                    <span className="leading-[22px] text-[#808080]">
+                      The Design Themes Inc. Mary Jane St, Sydney 2233
+                      Australia.
+                    </span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[16px] w-[16px]" src={phoneIcon} alt="" />
+                    <span className="text-[#808080]">{`+11 (2) 7654 2233`}</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img
+                      className="h-[16px] w-[16px]"
+                      src={phone2Icon}
+                      alt=""
+                    />
+                    <span className="text-[#808080]">{`+11 (5) 7654 2244`}</span>
+                  </div>
+                  <hr className="h-[2px] bg-[#e7cda0]"></hr>
+                </li>
+                <li className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
+                    <img className="h-[16px] w-[16px]" src={mailIcon} alt="" />
+                    <span className="text-[#808080]">lms@gmail.com</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <section className="text-white bg-[#838c48] py-5">
+      <section className="text-white bg-[#838c48] py-5 max-lg:px-5">
         <div className="flex py-[10px] justify-between items-center container mx-auto max-w-[1300px]">
           <div className="flex gap-2 items-center">
             <span className="text-sm text-white">
