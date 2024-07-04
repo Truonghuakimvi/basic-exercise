@@ -296,7 +296,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                       isActive ? "border-black" : "border-transparent"
-                    } hover:text-current`
+                    } hover:text-[#da853d] transition duration-300`
                   }
                 >
                   PAGES
@@ -390,7 +390,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                       isActive ? "border-black" : "border-transparent"
-                    } hover:text-current`
+                    } hover:text-[#da853d] transition duration-300`
                   }
                 >
                   BLOG
@@ -601,7 +601,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                       isActive ? "border-black" : "border-transparent"
-                    } hover:text-current`
+                    } hover:text-[#da853d] transition duration-300`
                   }
                 >
                   GALLERY
@@ -821,7 +821,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                       isActive ? "border-black" : "border-transparent"
-                    } hover:text-current`
+                    } hover:text-[#da853d] transition duration-300`
                   }
                 >
                   SHOP
@@ -1018,7 +1018,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `py-3 px-[21px] text-sm text-[#303030] border-2 rounded-sm font-semibold ${
                       isActive ? "border-black" : "border-transparent"
-                    } hover:text-current`
+                    } hover:text-[#da853d] transition duration-300`
                   }
                 >
                   CONTACT
