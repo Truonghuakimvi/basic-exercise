@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/images/lms-logo.png";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Hamburger from "hamburger-react";
 
 const Header = () => {
@@ -74,7 +74,9 @@ const Header = () => {
         }`}
       >
         <nav className="flex w-full justify-center max-xl:justify-between max-xl:px-5 gap-[134px] container mx-auto max-w-[1300px]">
-          <img src={logo} alt="Logo" />
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
           <div className="flex items-center h-[99px] justify-end">
             <div className="flex items-center xl:hidden pr-[16px]">
               <Hamburger size={23} toggled={isOpen} toggle={setOpen} />
